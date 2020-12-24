@@ -1,0 +1,263 @@
+@keyframes move{
+    0%{
+        transform:translateY(0)
+    }
+    5%{
+        transform:translateY(-36px)
+    }
+    50%{
+        transform:translateY(-36px)
+    }
+    55%{
+        transform:translateY(-72px)
+    }
+    to{
+        transform:translateY(-72px)
+    }
+}
+
+.header{
+    height: 155px;
+    background-color: transparent;
+}
+
+.shortcut{
+    position: absolute;
+    height: 56px;
+    padding: 9px 22px;
+    font-size: 14px;
+    z-index: 10;
+}
+
+.nav-con{
+    /* width: 442px; */
+    height: 36px;
+    line-height: 36px;
+    margin: 0 auto;
+}
+
+.nav-con ul li {
+    float: left;
+    margin-right: 12px;
+}
+
+.shortcut li a,
+.upload a{
+    color: #ffffff;
+}
+
+.nav-user ul li{
+    float: left;
+}
+
+.move{
+    display: block;
+    width: 54px;
+    height: 36px;
+    overflow: hidden;
+}
+
+.ani{
+    position: relative;
+    width: 54px;
+    height: 108px;
+    overflow: hidden;
+    text-align: center;
+    animation: move 10s ease-out 4.5s infinite normal;
+}
+
+.up{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 36px;
+}
+
+.ani img{
+    position: absolute;
+    left: 0;
+    top: 36px;
+    width: 100%;
+    height: 36px;
+    vertical-align: middle;
+}
+
+.down{
+    position: absolute;
+    left: 0;
+    top: 72px;
+    width: 100%;
+    height: 36px;
+}
+
+/* 搜索模块 */
+.nav-search{
+    width: 464px;
+    margin: 0 8px;
+}
+
+.nav-search input{
+    float: left;
+    width: 416px;
+    height: 36px;
+    font-size: 14px;
+    padding-left: 15px;
+    border: 1px solid rgb(190, 186, 186);
+    border-right: none;
+    border-radius: 3px 0 0 3px;
+    outline: none;
+}
+
+.search-btn{
+    width: 48px;
+    height: 36px;
+    font-size: 16px;
+    background-color: #e7e7e7;
+    border: 1px solid rgb(190, 186, 186);
+    border-left: none;
+}
+
+.search-btn:hover{
+    color:#00a1d6;
+    cursor: pointer;
+}
+
+.nav-user{
+    margin-left: 20px;
+}
+
+/* 用户头像 */
+.user-img,
+.user-img img{
+    width: 36px;
+    height: 36px;
+}
+
+.user-img{
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-info{
+    /* width: 454px; */
+    height: 36px;
+    line-height: 33px;
+    margin-left: 20px;
+}
+
+.user-info ul li{
+    margin-right: 12px;
+}
+
+.upload{
+    width: 100px;
+    height: 36px;
+    text-align: center;
+    margin-left: 3px;
+    line-height: 33px;
+    background-color: #fb7299;
+    border-radius: 2px;
+}
+
+.upload a{
+    display: block;
+    width: 100px;
+    height: 36px;
+}
+
+/* 遮盖层 */
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(rgba(0,0,0,.4), transparent);
+    z-index: 3;
+}
+
+.head-pics{
+    position: relative;
+    width: 100%;
+}
+
+.head-pics img{
+    width: 100%;
+}
+
+.logo{
+    position: absolute;
+    width: 165px;
+    top: 70px;
+    left: 157px;
+}
+
+.bot, .tp{
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+/* 二维码下拉 */
+.phone{
+    position: relative;
+}
+
+.appd::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-top: none;
+    border-bottom-color: #fff;
+    margin: 0 auto;
+    margin-top: 2px;
+}
+
+.app-download{
+    position: absolute;
+    top: 42px;
+    left: -97px;
+    width: 280px;
+}
+
+.appd::after,
+.app-download{
+    opacity: 0;
+    transition: all .5s ease-out .3s;
+}
+
+.appd:hover::after,
+.appd:hover + .app-download{
+    opacity: 1;
+}
+
+/* 游戏中心下拉 */
+.game{
+    position: relative;
+}
+
+.game-center{
+    position: absolute;
+    width: 580px;
+    height: 320px;
+    background-color: rgba(221, 35, 35, 0.568);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
