@@ -30,18 +30,17 @@
 }
 
 .nav-con{
-    /* width: 442px; */
     height: 36px;
     line-height: 36px;
     margin: 0 auto;
 }
 
-.nav-con ul li {
+.nav-con>ul>li {
     float: left;
     margin-right: 12px;
 }
 
-.shortcut li a,
+.shortcut  li a,
 .upload a{
     color: #ffffff;
 }
@@ -204,35 +203,23 @@
     position: relative;
 }
 
-.appd::after{
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-top: none;
-    border-bottom-color: #fff;
-    margin: 0 auto;
-    margin-top: 2px;
+.phone .icon-xiaosanjiao{
+    top: 29px;
+    left: 35px;
+}
+
+.downpic{
+    display: none;
 }
 
 .app-download{
     position: absolute;
-    top: 42px;
+    top: 45px;
     left: -97px;
     width: 280px;
+    z-index: -1;
 }
 
-.appd::after,
-.app-download{
-    opacity: 0;
-    transition: all .5s ease-out .3s;
-}
-
-.appd:hover::after,
-.appd:hover + .app-download{
-    opacity: 1;
-}
 
 /* 游戏中心下拉 */
 .game{
@@ -240,12 +227,254 @@
 }
 
 .game-center{
+    display: none;
     position: absolute;
-    width: 580px;
-    height: 320px;
-    background-color: rgba(221, 35, 35, 0.568);
+    width: 466px;
+    height: 260px;
+    top: 46px;
+    left: -50px;
+    background-color: white;
+    z-index: 10;
 }
 
+.game .icon-xiaosanjiao{
+    top: -20px;
+    left: 70px;
+}
+
+.left{
+    width: 265px;
+    padding: 12px 10px 0 10px;
+}
+
+.game-link{
+    position: relative;
+    display: block;
+    width: 240px;
+}
+
+.g1{
+    border-radius: 3px;
+}
+
+.words{
+    position: absolute;
+    font-size: 12px;
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+    line-height: 30px;
+    bottom: 12px;
+    border-radius: 3px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.747));
+}
+
+.brief{
+    margin-top: -5px;
+}
+
+.brief li{
+    float: left;
+    width: 80px;
+    height: 112px;
+    margin-right: 1px;
+    padding-left: 8px;
+}
+
+.brief li:hover{
+    background-color: #e5e9ef;
+}
+
+.brief li a{
+    display: block;
+    position: relative;
+    width: 64px;
+    color: #000;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.brief li a img{
+    width: 64px;
+    border-radius: 12px;
+}
+
+.brief li a span{
+    display: block;
+    position: absolute;
+    width: 72px;
+    left: -6px;
+    margin-top: -8px;
+    line-height: 20px;
+    text-align: center;
+    word-break: break-all;
+}
+
+.right{
+    margin-top: 11px;
+    background: url("../images/line.png") no-repeat;
+}
+
+.all{
+    width: 201px;
+}
+
+.title{
+    height: 30px;
+}
+
+.newgames li{
+    width: 100%;
+    height: 29px;
+    padding-left: 6px;
+    line-height: 29px;
+}
+
+.newgames li a:hover {
+    color: #00a1d6;
+    background-color: #e5e9ef;
+}
+
+.newgames li a{
+    display: block;
+    width: 100%;
+    color: #000;
+    padding-left: 15px;
+    font-size: 12px;
+}
+
+.gamepic{
+    display: none;
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    bottom: 0;
+    right: -197px;
+}
+
+.newgames li a:hover + .gamepic{
+    display: block;
+}
+
+/* 漫画下拉 */
+.comic{
+    position: relative;
+}
+
+.comic .icon-xiaosanjiao{
+    top: -20px;
+    left: 53px;
+}
+
+.comic-list{
+    display: none;
+    position: absolute;
+    width: 518px;
+    top: 48px;
+    left: -49px;
+    height: 260px;
+    border-radius: 0 0 5px 5px;
+    background-color: white;
+}
+
+.list-left{
+    width: 330px;
+    height: 260px;
+    padding-top: 13px;
+    padding-left: 6px;
+    background-color: white;
+}
+
+.box{
+    float: left;
+    width: 135px;
+    height: 105px;
+    margin-left: 7px;
+    border: 8px solid transparent;
+    box-sizing: content-box;
+}
+
+.img{
+    width: 135px;
+}
+
+.img img{
+    display: block;
+    width: 100%;
+}
+
+.box span{
+    display: block;
+    width: 100%;
+    height: 32px;
+    color: #000;
+    line-height: 30px;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: keep-all;
+}
+
+.box:hover{
+    background-color: #e5e9ef
+}
+
+.list-right{
+    width: 188px;
+    height: 260px;
+    /* background-color: rgba(255, 255, 0, 0.479); */
+}
+
+.hot-comic{
+    width: 100%;
+    height: 219px;
+    margin-top: 21px;
+    border-left: 1px solid #e5e9ef;
+    background-color: white;
+}
+
+.hot-comic p{
+    padding-left: 20px;
+    font-size: 16px;
+    height: 25px;
+    line-height: 20px;
+}
+
+.hot-comic ol{
+    /* padding-left: 20px; */
+    font-size: 13px;
+    color: #1c1d1f;
+}
+
+.hot-comic ol span{
+    color:#cf9870;  
+}
+
+.hot-comic ol a{
+    display: block;
+    height: 34px;
+    line-height: 36px;
+    padding-left: 20px;
+    color: #1c1d1f;
+}
+
+.hot-comic ol li:hover{
+    background-color: #e5e9ef;
+}
+
+.comicpic{
+    display: none;
+    position: absolute;
+    top: 32px;
+    right: -147px;
+    width: 157px;
+    border-radius: 3px;
+}
+
+.hot-comic ol li:hover > img{
+    display: block;
+}
 
 
 
