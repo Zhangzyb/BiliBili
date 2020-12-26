@@ -54,5 +54,12 @@ a{
     font-size: 10px;
 }
 
+span{
+    color: #1c1d1f;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: keep-all;
+}
 
 
