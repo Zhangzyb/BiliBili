@@ -41,6 +41,7 @@
 }
 
 .shortcut  li a,
+.user-item a,
 .upload a{
     color: #ffffff;
 }
@@ -92,13 +93,13 @@
 
 /* 搜索模块 */
 .nav-search{
-    width: 464px;
+    width: 472px;
     margin: 0 8px;
 }
 
 .nav-search input{
     float: left;
-    width: 416px;
+    width: 424px;
     height: 36px;
     font-size: 14px;
     padding-left: 15px;
@@ -122,45 +123,35 @@
     cursor: pointer;
 }
 
-.nav-user{
-    margin-left: 20px;
-}
-
-/* 用户头像 */
-.user-img,
-.user-img img{
-    width: 36px;
+.nav-user .user-item {
+    float: left;
+    /* text-align: center; */
     height: 36px;
-}
-
-.user-img{
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.user-info{
-    height: 36px;
-    line-height: 33px;
-    margin-left: 20px;
-}
-
-.user-info ul li{
     margin-right: 12px;
+    line-height: 36px;
+}
+
+.nav-user .user-avatar{
+    width: 36px;
+    margin: 0 20px 0 15px
+}
+
+.user-avatar img{
+    width: 100%;
+    border-radius: 50%;
 }
 
 .upload{
     width: 100px;
-    height: 36px;
-    text-align: center;
     margin-left: 3px;
-    line-height: 33px;
+    text-align: center;
     background-color: #fb7299;
     border-radius: 2px;
 }
 
 .upload a{
     display: block;
-    width: 100px;
+    width: 100%;
     height: 36px;
 }
 
@@ -599,10 +590,155 @@
     border-color: #e7e7e7;
 }
 
+/* 头像下拉 */
+.user-item{
+    position: relative;
+}
 
+.nav-user .user-scale{
+    position: absolute;
+    width: 280px;
+    /* height: 300px; */
+    top: 45px;
+    left: -119px;
+    color: #606266;
+    background-color: #fff;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+}
 
+.user-scale img{
+    position: absolute;
+    display: block;
+    width: 70px;
+    top: -36px;
+    left: 104px;
+}
 
+.user-scale > p {
+    margin-top: 42px;
+    color: #1c1d1f;
+    height: 20px;
+    line-height: 19px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 700;
+}
 
+.rate-info{
+    position: relative;
+    padding: 15px 16px 10px 16px;;
+}
+
+.rate-info .fl{
+    color: #212121;
+    font-size: 14px; 
+}
+
+.rate-info .fr{
+    color: #999;
+    font-size: 12px;
+}
+
+.rate-info > a{
+    display: block;
+    width: 100%;
+    height: 0.1em;
+    background-color: #f4f4f4;
+}
+
+.rate-info > a::before{
+    content: "";
+    display: block;
+    width: 44%;
+    height: 0.1em;
+    background-color:#f3cb85;
+}
+
+.coins{
+    padding: 3px 16px;
+}
+
+.icon-icon_shipin_yingbishu{
+    color: #00a1d6;
+    font-size: 22px;
+}
+
+.coins a{
+    display: inline-block;
+    width: 60px;
+    color: #606266;
+    vertical-align: top;
+}
+
+.coins a:hover,
+.coins a:hover span{
+    color: #00a1d6;
+}
+
+.icon-b{
+    color: rgb(255,182,26);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.coins span{
+    height: 25px;
+    margin-left: 3px;
+    display: inline-block;
+}
+
+.coins .icons{
+    width: 20px;
+    margin: 0 4px;
+}
+
+.coins .icons i{
+    width: 15px;
+    height: 15px;
+    font-size: 20px;
+    color: white;
+    border: 1px solid #00a1d6;
+    border-radius: 50%;
+    background-color: #00a1d6;
+}
+
+.rate-des{
+    position: absolute;
+    top: 0px;
+    left: 280px;
+    width: 233px;
+    color: #212121;
+    background-color:white;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.rate-info:hover .rate-des{
+    opacity: 1;
+}
+
+.ins{
+    margin: 14px 14px 3px 14px;
+}
+
+.ins p{
+    /* height: 20px; */
+    line-height: 20px;
+    white-space: normal;
+}
+
+.ins p:first-child{
+    margin-bottom: 14px;
+}
+
+.ins a{
+    display: block;
+    height: 30px;
+    margin-top: 8px;
+    line-height: 30px;
+    color: #00a1d6;
+}
 
 
 
