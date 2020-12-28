@@ -17,12 +17,15 @@
 }
 
 .header{
+    position: relative;
+    width: 1536px;
     height: 155px;
     background-color: transparent;
 }
 
 .shortcut{
     position: absolute;
+    min-width: 1531px;
     height: 56px;
     padding: 9px 22px;
     font-size: 14px;
@@ -41,7 +44,7 @@
 }
 
 .shortcut  li a,
-.user-item a,
+.user-item > a,
 .upload a{
     color: #ffffff;
 }
@@ -139,6 +142,7 @@
 .user-avatar img{
     width: 100%;
     border-radius: 50%;
+    transition: all .1s  ease;
 }
 
 .upload{
@@ -224,6 +228,7 @@
     top: 46px;
     left: -50px;
     background-color: white;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
     z-index: 10;
 }
 
@@ -364,6 +369,7 @@
     left: -49px;
     height: 260px;
     border-radius: 0 0 5px 5px;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
     background-color: white;
 }
 
@@ -472,6 +478,7 @@
     width: 520px;
     height: 263px;
     border-radius: 0 0 5px 5px;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
     background-color: white;
 }
 
@@ -596,6 +603,7 @@
 }
 
 .nav-user .user-scale{
+    display: none;
     position: absolute;
     width: 280px;
     /* height: 300px; */
@@ -603,7 +611,7 @@
     left: -119px;
     color: #606266;
     background-color: #fff;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
 }
 
 .user-scale img{
@@ -689,13 +697,13 @@
 
 .coins .icons{
     width: 20px;
-    margin: 0 4px;
+    margin: 0 3px;
 }
 
 .coins .icons i{
     width: 15px;
     height: 15px;
-    font-size: 20px;
+    font-size: 16px;
     color: white;
     border: 1px solid #00a1d6;
     border-radius: 50%;
@@ -740,10 +748,285 @@
     color: #00a1d6;
 }
 
+.counts{
+    height: 60px;
+    text-align: center;
+    color: #999;
+    border: 1px solid #f4f4f4;
+    border-left: none;
+    border-right: none;
+}
 
+.counts a{
+    display: inline-block;
+    color: #999;
+    width: 90px;
+    height: 60px;
+    font-size: 12px;
+    
+}
 
+.counts a:hover,
+.counts a:hover span{
+    color: #00a1d6;
+}
 
+.counts p{
+    height: 22px;
+}
 
+.counts span{
+    display: block;
+    height: 30px;
+    color: #212121;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.links{
+    padding: 9px 0;
+}
+
+.links a,
+.lang a,
+.exit a{
+    display: block;
+    height: 40px;
+    padding-left: 22px;
+    line-height: 40px;
+    margin-bottom: 2px;
+}
+
+.links a:hover,
+.lang a:hover,
+.exit a:hover,
+.messages a:hover{
+    background-color: #f4f4f4;
+}
+
+.links a i,
+.lang a i,
+.exit a i{
+    color: #979797;
+    margin-right: 8px;
+    font-size: 19px;
+}
+
+.lang{
+    position: relative;
+    padding: 6px 0;
+    border: 1px solid #f4f4f4;
+}
+
+.lang a i,
+.exit a i{
+    vertical-align: bottom;
+}
+
+.lang > i{
+    position: absolute;
+    color: #979797;
+    top: 8px;
+    right: 9px;
+}
+
+.lang .icon-arrow-left-c{
+    float: right;
+}
+
+.exit{
+    padding: 6px 0;
+}
+
+.selectlang{
+    position: absolute;
+    width: 243px;
+    padding: 5px 0;
+    top: 0;
+    right: -244px;
+    background-color: white;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.lang:hover .selectlang{
+    opacity: 1;
+}
+
+.selectlang a:first-child,
+.selectlang a:first-child i{
+    color: #00a1d6;
+}
+
+.selectlang a i{
+    float: right;
+}
+
+.user-avatar:hover > a img{
+    opacity: 0;
+}
+
+.user-avatar:hover .user-scale{
+    display: block;
+}
+
+/* 大会员 */
+.vip{
+    display: none;
+    position: absolute;
+    top: 47px;
+    left: -109px;
+    width: 260px;
+    padding: 12px 13px;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
+}
+
+.vip .icon-xiaosanjiao{
+    top: -21px;
+    left: 124px;
+}
+
+.vip .title{
+    color: #212121;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.vip a{
+    display: block;
+    width: 100%;
+    /* padding: 5px; */
+    padding-top: 7px;
+    border-radius: 2px;
+}
+
+.vip a img{
+    width: 100%;
+    border-radius: 2px;
+}
+
+.vip .vip-word{
+    padding-top: 1px;
+    line-height: 20px;
+}
+
+.vip .vip-word:hover{
+    color: #00a1d6;
+}
+
+.vip .take-money{
+    width: 159px;
+    height: 32px;
+    margin: 31px auto 4px auto;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 32px;
+    background-color: #00a1d6;
+}
+
+.vip .take-money:hover{
+    background-color: #00b5e5;
+}
+
+/* 消息 */
+.messages{
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: -70px;
+    width: 170px;
+    padding: 10px 0 7px 0;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
+}
+
+.messages .icon-xiaosanjiao{
+    top: -20px;
+    left: 78px;
+}
+
+.messages a{
+    display: block;
+    height: 35px;
+    padding-left: 22px;
+    line-height: 35px;
+    margin-bottom: 2px;
+}
+
+/* 动态 */
+.tab-bar{
+    position: absolute;
+    top: 45px;
+    left: -170px;
+    width: 367px;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
+}
+
+.tab-bar .icon-xiaosanjiao{
+    top: -20px;
+    left: 176px;
+}
+
+.tab-cate{
+    padding: 6px 0 5px 18px;
+    font-size: 12px;
+    border: 1px solid #ebe8e8;
+}
+
+.tab-cate > div{
+    display: inline-block;
+    background-color: #00a1d6;
+    width: 70px;
+    height: 24px;
+    color: #fff;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 17px;
+}
+
+.new-info{
+    color: #979797;
+    padding: 39px 0 30px 0;
+    text-align: center;
+    height: 100px;
+}
+
+.history{
+    font-size: 12px;
+}
+
+.history span{
+    display: block; 
+    color:  #979797;
+    padding-top: 4px;
+    text-align: center;
+}
+
+.history span::before,
+.history span::after{
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: -4px;
+    width: 115px;
+    border-top: 1px solid #ebe8e8;
+}
+
+.video-item a{
+    display: block;
+}
+
+.video-item a div{
+    display: inline-block;
+}
 
 
 
