@@ -961,6 +961,7 @@
 
 /* 动态 */
 .tab-bar{
+    display: none;
     position: absolute;
     top: 45px;
     left: -170px;
@@ -976,31 +977,45 @@
 }
 
 .tab-cate{
-    padding: 6px 0 5px 18px;
+    padding: 12px 0 0 18px;
     font-size: 12px;
     border: 1px solid #ebe8e8;
 }
 
 .tab-cate > div{
     display: inline-block;
-    background-color: #00a1d6;
-    width: 70px;
-    height: 24px;
-    color: #fff;
+    cursor: pointer;
+    width: 26px;
+    height: 24px; 
+    overflow: hidden;
+    color: #999;
     line-height: 24px;
     text-align: center;
     border-radius: 17px;
+    transition: all .3s ease;
+}
+
+.tab-cate > div:nth-child(2){
+    margin-left: 8px;
+    margin-right: 21px;
+}
+
+.tab-cate .active{
+    width: 70px;
+    color: #fff;
+    background-color: #00a1d6;
 }
 
 .new-info{
     color: #979797;
-    padding: 39px 0 30px 0;
+    padding: 47px 0 30px 0;
     text-align: center;
     height: 100px;
 }
 
 .history{
     font-size: 12px;
+    height: 30px;
 }
 
 .history span{
@@ -1016,17 +1031,82 @@
     display: inline-block;
     position: relative;
     top: -4px;
-    width: 115px;
+    width: 124px;
     border-top: 1px solid #ebe8e8;
+}
+
+.history span::before{
+    margin-right: 12px;
+}
+
+.history span::after{
+    margin-left: 12px;
+}
+
+.video-list{
+    height: 470px;
+    overflow-y: scroll;
 }
 
 .video-item a{
     display: block;
+    padding-left: 21px;
+    padding-top: 11px;
+    padding-bottom: 11px;
 }
 
-.video-item a div{
-    display: inline-block;
+.video-item a:hover{
+    background-color:#f4f4f4;
 }
+
+.video-item a .detail{
+    width: 191px;
+    margin-left: 14px;
+    margin-right: 6px;
+    font-size: 11px;
+    /* background-color: beige; */
+}
+
+.video-item a .detail span{
+    display: inline-block;
+    line-height: 12px;
+    height: 18px;
+    margin-right: 12px;
+}
+
+.video-item .detail div{
+    height: 18px;
+}
+
+.video-item .detail p{
+    font-size: 14px;
+    margin-top: 9px;
+    line-height: 19px;
+}
+
+.more{
+    position: relative;
+    height: 65px;
+    text-align: center;
+    /* background-color: #fb7299; */
+}
+
+.more > a{
+    display: block;
+    position: absolute;
+    width: 310px;
+    height: 30px;
+    line-height: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f4f4f4;
+}
+
+.more > a:hover{
+    background-color: #e7e7e7;
+}
+
 
 
 
