@@ -3,7 +3,7 @@ let tabcate = document.querySelectorAll('.tab-cate div')
 let tab_list = document.querySelectorAll('.tab-list li')
 let items = document.querySelectorAll('.item')
 
-console.log(tab_list)
+console.log(tabcate)
 
 for (let i = 0; i < lis.length; i++){
     lis[i].onmouseover = function () {
