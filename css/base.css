@@ -1,0 +1,67 @@
+ol, ul {
+    list-style: none
+}
+
+a {
+    color: #212121;
+    /* transition: color .3s */
+}
+
+a:hover {
+    color: #00a1d6
+}
+
+a, a:hover {
+    text-decoration: none
+}
+
+:focus, a:focus {
+    outline: none
+}
+
+img:not([src]), img[src=""] {
+    opacity: 0
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* ::selection {
+    background: #73c9e5;
+    color: inherit
+}
+
+* ::-moz-selection {
+    background: #73c9e5;
+    color: inherit
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #505050;
+    font: 14px -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+    -webkit-font-smoothing:antialiased;
+}
+
+.clearfix:before,
+.clearfix:after{
+    content: "";
+    display: table;
+}
+
+.clearfix:after{
+    clear: both;
+}
+
+.icon-xiaosanjiao{
+    position: absolute;
+    top: -20px;
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    font-size: 13px;
+}

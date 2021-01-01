@@ -1,312 +1,152 @@
-@keyframes move{
-    0%{
-        transform:translateY(0)
-    }
-    5%{
-        transform:translateY(-36px)
-    }
-    50%{
-        transform:translateY(-36px)
-    }
-    55%{
-        transform:translateY(-72px)
-    }
-    to{
-        transform:translateY(-72px)
-    }
-}
-
+/* 顶部 */
 .header{
-    position: relative;
-    width: 1536px;
-    height: 155px;
-    background-color: transparent;
+    width: 100%;
 }
 
-.shortcut{
-    position: absolute;
-    min-width: 1531px;
+body{
+    background-color: darkgrey;
+}
+
+.menu-wrap{
     height: 56px;
-    padding: 9px 22px;
-    font-size: 14px;
-    z-index: 10;
+    padding: 10px 24px;
+    background-color: darkgrey;
 }
 
-.nav-con{
+.menu{
     height: 36px;
-    line-height: 36px;
-    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.459);
 }
 
-.nav-con>ul>li {
+/* 菜单栏 */
+.menuLink > ul{
+    padding: 2px 0;
+}
+
+.menuLink > ul > li{
+    position: relative;
     float: left;
     margin-right: 12px;
 }
 
-.shortcut  li a,
-.user-item > a,
-.upload a{
-    color: #ffffff;
-}
-
-.move{
+.menuLink > ul > li > a{
     display: block;
-    width: 54px;
-    height: 36px;
-    overflow: hidden;
+    height: 32px;
+    color: #fff;
+    line-height: 32px;
 }
 
-.ani{
-    position: relative;
-    width: 54px;
-    height: 108px;
-    overflow: hidden;
-    text-align: center;
-    animation: move 10s ease-out 4.5s infinite normal;
-}
-
-.up{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 36px;
-}
-
-.ani img{
-    position: absolute;
-    left: 0;
-    top: 36px;
-    width: 100%;
-    height: 36px;
+.menuLink ul li > a i{
+    display: inline-block;
+    height: 32px;
+    margin-right: 6px;
+    font-size: 18px;
+    line-height: 31px;
     vertical-align: middle;
 }
 
-.down{
-    position: absolute;
-    left: 0;
-    top: 72px;
-    width: 100%;
-    height: 36px;
-}
-
-/* 搜索模块 */
-.nav-search{
-    width: 472px;
-    margin: 0 8px;
-}
-
-.nav-search input{
-    float: left;
-    width: 424px;
-    height: 36px;
-    font-size: 14px;
-    padding-left: 15px;
-    border: 1px solid rgb(190, 186, 186);
-    border-right: none;
-    border-radius: 3px 0 0 3px;
-    outline: none;
-}
-
-.search-btn{
-    width: 48px;
-    height: 36px;
-    font-size: 16px;
-    background-color: #e7e7e7;
-    border: 1px solid rgb(190, 186, 186);
-    border-left: none;
-}
-
-.search-btn:hover{
-    color:#00a1d6;
-    cursor: pointer;
-}
-
-.nav-user .user-item {
-    float: left;
-    /* text-align: center; */
-    height: 36px;
-    margin-right: 12px;
-    line-height: 36px;
-}
-
-.nav-user .user-avatar{
-    width: 36px;
-    margin: 0 20px 0 15px
-}
-
-.user-avatar img{
-    width: 100%;
-    border-radius: 50%;
-    transition: all .1s  ease;
-}
-
-.upload{
-    width: 100px;
-    margin-left: 3px;
-    text-align: center;
-    background-color: #fb7299;
-    border-radius: 2px;
-}
-
-.upload a{
-    display: block;
-    width: 100%;
-    height: 36px;
-}
-
-/* 遮盖层 */
-.mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(rgba(0,0,0,.4), transparent);
-    z-index: 3;
-}
-
-.head-pics{
-    position: relative;
-    width: 100%;
-}
-
-.head-pics img{
-    width: 100%;
-}
-
-.logo{
-    position: absolute;
-    width: 165px;
-    top: 70px;
-    left: 157px;
-}
-
-.bot, .tp{
-    position: absolute;
-    top: 10px;
-    left: 0;
-}
-
-/* 二维码下拉 */
-.phone{
-    position: relative;
-}
-
-.phone .icon-xiaosanjiao{
-    top: 29px;
-    left: 35px;
-}
-
-.downpic{
-    display: none;
-}
-
-.app-download{
-    position: absolute;
-    top: 45px;
-    left: -97px;
-    width: 280px;
-    z-index: -1;
-}
-
-
 /* 游戏中心下拉 */
-.game{
-    position: relative;
-}
-
-.game-center{
+.gameCenter{
     display: none;
     position: absolute;
     width: 466px;
     height: 260px;
-    top: 46px;
-    left: -50px;
+    top: 45px;
+    left: -52px;
+    border-radius: 0 0 4px 4px;
     background-color: white;
     box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
     z-index: 10;
 }
 
-.game .icon-xiaosanjiao{
-    top: -20px;
-    left: 70px;
-}
-
-.left{
-    width: 265px;
-    padding: 12px 10px 0 10px;
-}
-
-.game-link{
-    position: relative;
+.game:hover .gameCenter{
     display: block;
-    width: 240px;
 }
 
-.g1{
+.gameCenter .icon-xiaosanjiao{
+    top: -20px;
+    left: 67px;
+}
+
+.gameLeft{
+    float: left;
+    width: 265px;
+    margin-top: 12px;
+}
+
+.gameLink{
+    display: block;
+    position: relative;
+    width: 240px;
+    height: 128px;
+    margin-left: 12px;
     border-radius: 3px;
 }
 
-.words{
+.gameLink img{
+    border-radius: 3px;
+}
+
+.gameLink > p{
     position: absolute;
-    font-size: 12px;
+    bottom: 0;
     width: 100%;
     height: 30px;
     padding-left: 10px;
+    color: #fff;
+    font-size: 12px;
     line-height: 30px;
-    bottom: 12px;
     border-radius: 3px;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.747));
 }
 
-.brief{
-    margin-top: -5px;
+.recomGames{
+    margin-top: 6px;
+    padding: 0 6px;
 }
 
-.brief li{
-    float: left;
-    width: 80px;
-    height: 112px;
-    margin-right: 1px;
-    padding-left: 8px;
-}
-
-.brief li:hover{
-    background-color: #e5e9ef;
-}
-
-.brief li a{
+.recomGames a{
     display: block;
-    position: relative;
-    width: 64px;
-    color: #000;
-    font-size: 12px;
-    margin-top: 5px;
+    float: left;
+    width: 84px;
+    height: 114px;
+    padding-top: 6px;
+    text-align: center;
 }
 
-.brief li a img{
+.recomGames a > img{
+    display: block;
     width: 64px;
+    height: 64px;
+    margin: 0 auto;
     border-radius: 12px;
 }
 
-.brief li a span{
-    display: block;
-    position: absolute;
+.recomGames a > span{
     width: 72px;
-    left: -6px;
-    margin-top: -8px;
+    height: 40px;
+    margin: 4px auto;
+    display: block;
+    font-size: 12px;
     line-height: 20px;
     text-align: center;
+    color: #222;
+    overflow: hidden;
     word-break: break-all;
 }
 
-.right{
-    margin-top: 11px;
+.recomGames a:hover{
+    background-color: #e5e9ef;
+}
+
+.gameRight{
+    float: left;
+    width: 201px;
+    margin-top: 12px;
     background: url("../images/line.png") no-repeat;
 }
 
-.all{
+.gameWrap{
     width: 201px;
 }
 
@@ -314,19 +154,14 @@
     height: 30px;
 }
 
-.newgames li{
+.gameList li{
     width: 100%;
     height: 29px;
     padding-left: 6px;
     line-height: 29px;
 }
 
-.newgames li a:hover {
-    color: #00a1d6;
-    background-color: #e5e9ef;
-}
-
-.newgames li a{
+.gameList li a{
     display: block;
     width: 100%;
     color: #000;
@@ -334,7 +169,12 @@
     font-size: 12px;
 }
 
-.gamepic{
+.gameList li a:hover {
+    color: #00a1d6;
+    background-color: #e5e9ef;
+}
+
+.gamePic{
     display: none;
     position: absolute;
     width: 220px;
@@ -343,993 +183,22 @@
     right: -197px;
 }
 
-.newgames li a:hover + .gamepic{
-    display: block;
-}
-
-/* 漫画下拉 */
-.comic{
-    position: relative;
-}
-
-.comic .icon-xiaosanjiao{
-    top: -20px;
-    left: 53px;
-}
-
-.comic-list{
-    display: none;
-    position: absolute;
-    width: 518px;
-    top: 48px;
-    left: -49px;
-    height: 260px;
-    border-radius: 0 0 5px 5px;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
-    background-color: white;
-}
-
-.list-left{
-    width: 330px;
-    height: 260px;
-    padding-top: 13px;
-    padding-left: 6px;
-    background-color: white;
-}
-
-.box{
-    float: left;
-    width: 135px;
-    height: 105px;
-    margin-left: 7px;
-    border: 8px solid transparent;
-    box-sizing: content-box;
-}
-
-.img{
-    width: 135px;
-}
-
-.img img{
-    display: block;
-    width: 100%;
-}
-
-.box span{
-    display: block;
-    width: 100%;
-    height: 32px;
-    line-height: 30px;
-    font-size: 13px;
-}
-
-.box:hover{
-    background-color: #e5e9ef
-}
-
-.list-right{
-    width: 188px;
-    height: 260px;
-}
-
-.hot-comic{
-    width: 100%;
-    height: 219px;
-    margin-top: 21px;
-    border-left: 1px solid #e5e9ef;
-    background-color: white;
-}
-
-.hot-comic p{
-    padding-left: 20px;
-    font-size: 16px;
-    height: 25px;
-    line-height: 20px;
-}
-
-.hot-comic ol{
-    font-size: 13px;
-    color: #1c1d1f;
-}
-
-.hot-comic ol span{
-    color:#cf9870;  
-}
-
-.hot-comic ol a{
-    display: block;
-    height: 34px;
-    line-height: 36px;
-    padding-left: 20px;
-    color: #1c1d1f;
-}
-
-.hot-comic ol li:hover{
-    background-color: #e5e9ef;
-}
-
-.comicpic{
-    display: none;
-    position: absolute;
-    top: 32px;
-    right: -147px;
-    width: 157px;
-    border-radius: 3px;
-}
-
-.hot-comic ol li:hover > img{
+.gameList li a:hover + .gamePic{
     display: block;
 }
 
 /* 直播下拉 */
-.live{
-    position: relative;
-}
-
-.live-list{
-    display: none;
+.liveInfo{
     position: absolute;
-    top: 47px;
-    left: -49px;
+    top: 45px;
+    left: -50px;
     width: 520px;
     height: 263px;
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 4px 4px;
     box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
     background-color: white;
 }
 
-.live-list .icon-xiaosanjiao{
-    top: -21px;
-    left: 54px;
-}
-
-.live-user{
-    width: 270px;
-    height: 100%;
-    padding: 10px 0px 10px 18px;
-    border-radius: 0 0 0 4px;
-    background-color: white;
-}
-
-.hot-live{
-    color: #fb7299;
-    font-size: 15px;
-    height: 30px;
-    margin-bottom: 12px;
-}
-
-.user-list a{
-    float: left;
-    width: 64px;
-    margin-right: 17px;
-    margin-bottom: 5px;
-}
-
-.user-list a img{
-    display: block;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-}
-
-.imgdiv{
-    position: relative;
-}
-
-.imgmask{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 64px;
-    height: 64px;
-    text-align: right;
-    padding-right: 10px;
-    line-height: 64px;
-    font-weight: 700;
-    border-radius: 50%;
-    background-color:rgba(0,0,0,.5);
-    /* opacity: 0; */
-    transform: scale(0);
-    /* transition: all .1s ease-out; */
-    transition: all .2s cubic-bezier(.22,.58,.12,.98);
-}
-
-.imgmask::before{
-    content: "";
-    display: table;
-    position: absolute;
-    top: 26px;
-    left: 10px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #fb7299;
-}
-
-.user-list a:hover .imgmask{
-    transform: scale(1);
-    /* opacity: 1; */
-}
-
-.user-list a span{
-    display: block;
-    width: 100%;
-    height: 30px;
-    line-height: 30px;
-    font-size: 12px;
-    text-align: center;
-}
-
-.live-activity{
-    width: 250px;
-    height: 100%;
-}
-
-.hot-activity{
-    margin-top: 10px;
-    margin-left: 20px;
-    height: 17px;
-}
-
-.acimg-list{
-    width: 100%;
-    height: 207px;
-    border-left: 1px solid #e5e9ef;
-}
-
-.acimg-item{
-    height: 80px;
-    border: 20px solid transparent;
-    border-top: 9px solid transparent;
-    border-bottom: 9px solid transparent;
-    box-sizing: content-box;
-}
-
-.acimg-item img{
-    border-radius: 3px;
-}
-
-.acimg-item:hover{
-    border-color: #e7e7e7;
-}
-
-/* 头像下拉 */
-.user-item{
-    position: relative;
-}
-
-.nav-user .user-scale{
-    display: none;
-    position: absolute;
-    width: 280px;
-    /* height: 300px; */
-    top: 45px;
-    left: -119px;
-    color: #606266;
-    background-color: #fff;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
-}
-
-.user-scale img{
-    position: absolute;
-    display: block;
-    width: 70px;
-    top: -36px;
-    left: 104px;
-}
-
-.user-scale > p {
-    margin-top: 42px;
-    color: #1c1d1f;
-    height: 20px;
-    line-height: 19px;
-    font-size: 16px;
-    text-align: center;
-    font-weight: 700;
-}
-
-.rate-info{
-    position: relative;
-    padding: 15px 16px 10px 16px;;
-}
-
-.rate-info .fl{
-    color: #212121;
-    font-size: 14px; 
-}
-
-.rate-info .fr{
-    color: #999;
-    font-size: 12px;
-}
-
-.rate-info > a{
-    display: block;
-    width: 100%;
-    height: 0.1em;
-    background-color: #f4f4f4;
-}
-
-.rate-info > a::before{
-    content: "";
-    display: block;
-    width: 44%;
-    height: 0.1em;
-    background-color:#f3cb85;
-}
-
-.coins{
-    padding: 3px 16px;
-}
-
-.icon-icon_shipin_yingbishu{
-    color: #00a1d6;
-    font-size: 22px;
-}
-
-.coins a{
-    display: inline-block;
-    width: 60px;
-    color: #606266;
-    vertical-align: top;
-}
-
-.coins a:hover,
-.coins a:hover span{
-    color: #00a1d6;
-}
-
-.icon-b{
-    color: rgb(255,182,26);
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.coins span{
-    height: 25px;
-    margin-left: 3px;
-    display: inline-block;
-}
-
-.coins .icons{
-    width: 20px;
-    margin: 0 3px;
-}
-
-.coins .icons i{
-    width: 15px;
-    height: 15px;
-    font-size: 16px;
-    color: white;
-    border: 1px solid #00a1d6;
-    border-radius: 50%;
-    background-color: #00a1d6;
-}
-
-.rate-des{
-    position: absolute;
-    top: 0px;
-    left: 280px;
-    width: 233px;
-    color: #212121;
-    background-color:white;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
-    opacity: 0;
-    transition: all .3s ease;
-}
-
-.rate-info:hover .rate-des{
-    opacity: 1;
-}
-
-.ins{
-    margin: 14px 14px 3px 14px;
-}
-
-.ins p{
-    /* height: 20px; */
-    line-height: 20px;
-    white-space: normal;
-}
-
-.ins p:first-child{
-    margin-bottom: 14px;
-}
-
-.ins a{
-    display: block;
-    height: 30px;
-    margin-top: 8px;
-    line-height: 30px;
-    color: #00a1d6;
-}
-
-.counts{
-    height: 60px;
-    text-align: center;
-    color: #999;
-    border: 1px solid #f4f4f4;
-    border-left: none;
-    border-right: none;
-}
-
-.counts a{
-    display: inline-block;
-    color: #999;
-    width: 90px;
-    height: 60px;
-    font-size: 12px;
-    
-}
-
-.counts a:hover,
-.counts a:hover span{
-    color: #00a1d6;
-}
-
-.counts p{
-    height: 22px;
-}
-
-.counts span{
-    display: block;
-    height: 30px;
-    color: #212121;
-    line-height: 30px;
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.links{
-    padding: 9px 0;
-}
-
-.links a,
-.lang a,
-.exit a{
-    display: block;
-    height: 40px;
-    padding-left: 22px;
-    line-height: 40px;
-    margin-bottom: 2px;
-}
-
-.links a:hover,
-.lang a:hover,
-.exit a:hover,
-.messages a:hover{
-    background-color: #f4f4f4;
-}
-
-.links a i,
-.lang a i,
-.exit a i{
-    color: #979797;
-    margin-right: 8px;
-    font-size: 19px;
-}
-
-.lang{
-    position: relative;
-    padding: 6px 0;
-    border: 1px solid #f4f4f4;
-}
-
-.lang a i,
-.exit a i{
-    vertical-align: bottom;
-}
-
-.lang > i{
-    position: absolute;
-    color: #979797;
-    top: 8px;
-    right: 9px;
-}
-
-.lang .icon-arrow-left-c{
-    float: right;
-}
-
-.exit{
-    padding: 6px 0;
-}
-
-.selectlang{
-    position: absolute;
-    width: 243px;
-    padding: 5px 0;
-    top: 0;
-    right: -244px;
-    background-color: white;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
-    opacity: 0;
-    transition: all .3s ease;
-}
-
-.lang:hover .selectlang{
-    opacity: 1;
-}
-
-.selectlang a:first-child,
-.selectlang a:first-child i{
-    color: #00a1d6;
-}
-
-.selectlang a i{
-    float: right;
-}
-
-.user-avatar:hover > a img{
-    opacity: 0;
-}
-
-.user-avatar:hover .user-scale{
-    display: block;
-}
-
-/* 大会员 */
-.vip{
-    display: none;
-    position: absolute;
-    top: 47px;
-    left: -109px;
-    width: 260px;
-    padding: 12px 13px;
-    background-color: white;
-    border-radius: 2px;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
-}
-
-.vip .icon-xiaosanjiao{
-    top: -21px;
-    left: 124px;
-}
-
-.vip .title{
-    color: #212121;
-    font-size: 14px;
-    font-weight: 900;
-}
-
-.vip a{
-    display: block;
-    width: 100%;
-    /* padding: 5px; */
-    padding-top: 7px;
-    border-radius: 2px;
-}
-
-.vip a img{
-    width: 100%;
-    border-radius: 2px;
-}
-
-.vip .vip-word{
-    padding-top: 1px;
-    line-height: 20px;
-}
-
-.vip .vip-word:hover{
-    color: #00a1d6;
-}
-
-.vip .take-money{
-    width: 159px;
-    height: 32px;
-    margin: 31px auto 4px auto;
-    padding: 0;
-    color: #fff;
-    text-align: center;
-    line-height: 32px;
-    background-color: #00a1d6;
-}
-
-.vip .take-money:hover{
-    background-color: #00b5e5;
-}
-
-/* 消息 */
-.messages{
-    display: none;
-    position: absolute;
-    top: 45px;
-    left: -70px;
-    width: 170px;
-    padding: 10px 0 7px 0;
-    border-radius: 2px;
-    background-color: #fff;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
-}
-
-.messages .icon-xiaosanjiao{
-    top: -20px;
-    left: 78px;
-}
-
-.messages a{
-    display: block;
-    height: 35px;
-    padding-left: 22px;
-    line-height: 35px;
-    margin-bottom: 2px;
-}
-
-/* 动态 */
-.tab-bar{
-    display: none;
-    position: absolute;
-    top: 45px;
-    left: -170px;
-    width: 367px;
-    border-radius: 3px;
-    background-color: #fff;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
-}
-
-.tab-bar .icon-xiaosanjiao{
-    top: -20px;
-    left: 176px;
-}
-
-.tab-cate{
-    padding: 12px 0 0 18px;
-    font-size: 12px;
-    border: 1px solid #ebe8e8;
-}
-
-.tab-cate > div{
-    display: inline-block;
-    cursor: pointer;
-    width: 26px;
-    height: 24px; 
-    overflow: hidden;
-    color: #999;
-    line-height: 24px;
-    text-align: center;
-    border-radius: 17px;
-    transition: all .3s ease;
-}
-
-.tab-cate > div:nth-child(2){
-    margin-left: 8px;
-    margin-right: 21px;
-}
-
-.tab-cate .active{
-    width: 70px;
-    color: #fff;
-    background-color: #00a1d6;
-}
-
-.new-info{
-    color: #979797;
-    padding: 47px 0 30px 0;
-    text-align: center;
-    height: 100px;
-}
-
-.history{
-    font-size: 12px;
-    height: 30px;
-}
-
-.history span{
-    display: block; 
-    color:  #979797;
-    padding-top: 4px;
-    text-align: center;
-}
-
-.history span::before,
-.history span::after{
-    content: "";
-    display: inline-block;
-    position: relative;
-    top: -4px;
-    width: 124px;
-    border-top: 1px solid #ebe8e8;
-}
-
-.history span::before{
-    margin-right: 12px;
-}
-
-.history span::after{
-    margin-left: 12px;
-}
-
-.video-list{
-    height: 470px;
-    overflow-y: auto;
-}
-
-.video-item a{
-    display: block;
-    padding-left: 21px;
-    padding-top: 11px;
-    padding-bottom: 11px;
-}
-
-.video-item a:hover{
-    background-color:#f4f4f4;
-}
-
-.video-item a .detail{
-    width: 191px;
-    margin-left: 14px;
-    margin-right: 6px;
-    font-size: 11px;
-}
-
-.video-item a .detail span{
-    display: inline-block;
-    line-height: 12px;
-    height: 18px;
-    margin-right: 12px;
-}
-
-.video-item .detail div{
-    height: 18px;
-}
-
-.video-item .detail p{
-    font-size: 14px;
-    margin-top: 9px;
-    line-height: 19px;
-}
-
-.more{
-    position: relative;
-    height: 65px;
-    text-align: center;
-}
-
-.more > a{
-    display: block;
-    position: absolute;
-    width: 310px;
-    height: 30px;
-    line-height: 30px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f4f4f4;
-}
-
-.more > a:hover{
-    background-color: #e7e7e7;
-}
-
-/* 收藏 */
-.collect{
-    display: none;
-    position: absolute;
-    top: 45px;
-    left: -249px;
-    width: 520px;
-    height: 520px;
-    border-radius: 2px;
-    background-color: #fff;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
-}
-
-.collect .icon-xiaosanjiao{
-    top: -20px;
-    left: 254px;
-}
-
-.tab-list{
-    width: 150px;
-    padding-top: 13px;
-}
-
-.tab-list li{
-    height: 47px;
-    color: #212121;;
-    line-height: 47px;
-    padding: 0 19px 0 15px;
-    cursor: pointer;
-}
-
-.tab-list li:hover{
-    background-color:#fafafa;
-}
-
-.tab-list ul span{
-    color: #999;
-    font-size: 15px;
-}
-
-.tab-list ul .current{
-    color: #fff;
-    background-color: #00a1d6;
-}
-
-.tab-list ul .current span{
-    color: #fff;
-}
-
- .tab-con{
-     width: 370px;
-     height: 520px;
-     padding-top: 13px;
-     border-left: 1px solid #e5e9ef;
-     background-color: #fff;
- }
-
-.tab-items{
-    height: 460px;
-    overflow-y: auto;
-}
-
-.tab-items .item{
-     display: none;
- }
- 
-.item-link{
-    display: block;
-    padding: 7px 5px 7px 20px;
-}
-
-.item-link:hover{
-    background-color: #f4f4f4;
-}
-
-.item-img{
-    position: relative;
-    width: 107px;
-    height: 61px;
-    border-radius: 2px;
-}
-
-.length{
-    position: absolute;
-    height: 16px;
-    line-height: 16px;
-    padding: 0 2px;
-    right: 5px;
-    bottom: 4px;
-    font-size: 12px;
-    color: #fff;
-    background-color: rgba(0,0,0,.5); 
-}
-
-.item-img img{
-    width: 100%;
-    border-radius: 2px;
-}
-
-.item-detail{
-    width: 220px;
-    padding-left: 11px;
-}
-
-.item-title{
-    display: -webkit-box;
-    height: 40px;
-    line-height: 20px;
-    overflow: hidden;  
-    text-overflow: ellipsis; 
-    -webkit-line-clamp:2;
-    -webkit-box-orient: vertical;
-}
-
-.item-user{
-    height: 21px;
-    color: #999;
-    font-size: 12px;
-    line-height: 25px;
-}
-
-.playall{
-    height: 47px;
-    text-align: center;
-    border-top: 1px solid #e5e9ef;
-}
-
- .playall a{
-     display: block;
-     width: 100%;
-     height: 47px;
-     padding-top: 5px;
-     color: #00b5e5;
- }
-
-.playall a i{
-    font-size: 15px;
-    margin-right: 4px;
-    vertical-align: top;
-}
-
- .playall a:hover{
-     background-color: #f4f4f4;
- }
-
- /* 历史 */
- .mini-his{
-     display: none;
-     position: absolute;
-     top: 47px;
-     left: -170px;
-     width: 369px;
-     height: 518px;
-     border-radius: 2px;
-     background-color: #fff;
-     box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
- }
-
- .mini-his .icon-xiaosanjiao{
-    top: -20px;
-    left: 176px;
- }
-
-.mini-his .tab-cate div{
-    color: #606266;
-}
-
-.mini-his .tab-cate .active{
-    color: #fff;
-}
-
-.today{
-    height: 38px;
-    font-size: 12px;
-    color: #999;
-    padding: 7px 0 0 20px;
-}
-
-.bottom{
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 3px;
-    background-color:#757575;
-}
-
-.percent{
-    width: 30%;
-    background-color: #fb7299;
-}
-
-/* 投稿 */
-.kind-upload{
-    display: none;
-    position: absolute;
-    top: 50px;
-    right: -20px;
-    width: 304px;
-    height: 77px;
-    border-radius: 2px;
-    background-color: #fff;
-    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
-}
-
-.kind-upload .icon-xiaosanjiao{
-    top: -20px;
-    right: 66px;
-    font-size: 13px;
-}
-
-.kind-upload a{
-    display: inline-block;
-    width: 76px;
-    height: 77px;
-    color: #212121;
-    line-height: 19px;
-}
-
-.kind-upload a:hover{
-    background-color: #f4f4f4;
-}
-
-.kind-upload a i{
-    display: block;
-    width: 100%;
-    height: 30px;
-    color: #757575;
-    margin: 9px 0;
-    line-height: 30px;
-    font-size: 26px;
+.liveInfo .icon-xiaosanjiao{
+    left: 57px;
 }
