@@ -65,3 +65,29 @@ body {
     color: #fff;
     font-size: 13px;
 }
+
+@keyframes move{
+    0%{
+        transform:translateY(0)
+    }
+    5%{
+        transform:translateY(-36px)
+    }
+    50%{
+        transform:translateY(-36px)
+    }
+    55%{
+        transform:translateY(-72px)
+    }
+    to{
+        transform:translateY(-72px)
+    }
+}
+
+.fr{
+    float: right;
+}
+
+.fl{
+    float: left;
+}
