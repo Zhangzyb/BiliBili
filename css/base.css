@@ -4,7 +4,7 @@ ol, ul {
 
 a {
     color: #212121;
-    /* transition: color .3s */
+    transition: color .3s
 }
 
 a:hover {
