@@ -44,50 +44,60 @@ body {
     padding: 0;
     color: #505050;
     font: 14px -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
-    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing: antialiased;
 }
 
-.clearfix:before,
-.clearfix:after{
+.clearfix:before, .clearfix:after {
     content: "";
     display: table;
 }
 
-.clearfix:after{
+.clearfix:after {
     clear: both;
 }
 
-.icon-xiaosanjiao{
+.icon-xiaosanjiao {
     position: absolute;
     top: -20px;
-    height: 36px;
-    line-height: 36px;
-    color: #fff;
     font-size: 13px;
+    height: 36px;
+    color: #fff;
+    line-height: 36px;
 }
 
-@keyframes move{
-    0%{
-        transform:translateY(0)
+@keyframes move {
+    0% {
+        transform: translateY(0)
     }
-    5%{
-        transform:translateY(-36px)
+    5% {
+        transform: translateY(-36px)
     }
-    50%{
-        transform:translateY(-36px)
+    50% {
+        transform: translateY(-36px)
     }
-    55%{
-        transform:translateY(-72px)
+    55% {
+        transform: translateY(-72px)
     }
-    to{
-        transform:translateY(-72px)
+    to {
+        transform: translateY(-72px)
     }
 }
 
-.fr{
+@keyframes slowBox {
+    from {
+        opacity: 0;
+        transform: translateY(0) translateZ(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(3px) translateZ(0);
+    }
+}
+
+.fr {
     float: right;
 }
 
-.fl{
+.fl {
     float: left;
 }
