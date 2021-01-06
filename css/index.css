@@ -1514,7 +1514,7 @@ input {
 }
 
 /* 导航模块中的隐藏的子导航 */
-.nav-all{
+.nav-all-up{
     position: relative;
 }
 
@@ -1527,14 +1527,24 @@ input {
     flex-flow: row wrap;
     writing-mode: vertical-lr;
     border-radius: 4px;
+    /* border: 1px solid #ebeef5; */
     background: #fff;
     box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
     z-index: 20;
 }
 
-.anima:hover .sub-nav{
+.dropdown:hover .sub-nav,
+.dropdown:hover .sub-nav-down{
     display: flex;
     animation: slowBox .4s ease forwards;
+}
+
+.entertain{
+    top: -93px;
+}
+
+.playroom{
+    top: -128px;
 }
 
 .sub-nav a{
@@ -1555,3 +1565,74 @@ input {
     border: 1px solid transparent;
     z-index: 20;
 }
+
+.nav-all-down{
+    position: relative;
+}
+
+.sub-nav-down{
+    display: none;
+    position: absolute;
+    max-height: 148px;
+    top: 253px;
+    left: 377px;
+    flex-flow: row wrap;
+    writing-mode: vertical-lr;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    z-index: 20;
+}
+
+.orgin{
+    left: 454px;
+}
+
+.games{
+    left: 518px;
+}
+
+.digit{
+    left: 580px;
+}
+
+.circle{
+    left: 642px;
+}
+
+.info{
+    left: 719px;
+}
+
+.videos{
+    left: 787px;
+}
+
+.living{
+    left: 1135px;
+}
+
+.sub-nav-down::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -25px;
+    left: 16px;
+    width: 0;
+    height: 9px;
+    /* line-height: 50px; */
+    /* box-shadow: 0 2px 12px 0 rgba(0,0,0,.1); */
+    border: 10px solid #fff;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+}
+
+.sub-nav-down a{
+    height: 37px;
+    padding: 10px 13px;
+    font-size: 12px;
+    border: 1px solid transparent;
+    writing-mode: horizontal-tb;
+}
+
