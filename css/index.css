@@ -1417,12 +1417,12 @@ input {
 
 .main {
     width: 1198px;
-    padding: 20px 0;
     margin: 0 auto;
 }
 
 .nav-bar {
     display: flex;
+    padding: 20px 0;
 }
 
 .nav-left {
@@ -1575,7 +1575,7 @@ input {
     position: absolute;
     max-height: 148px;
     top: 253px;
-    left: 377px;
+    left: 365px;
     flex-flow: row wrap;
     writing-mode: vertical-lr;
     border-radius: 4px;
@@ -1585,15 +1585,15 @@ input {
 }
 
 .orgin{
-    left: 454px;
+    left: 437px;
 }
 
 .games{
-    left: 518px;
+    left: 501px;
 }
 
 .digit{
-    left: 580px;
+    left: 570px;
 }
 
 .circle{
@@ -1601,11 +1601,11 @@ input {
 }
 
 .info{
-    left: 719px;
+    left: 710px;
 }
 
 .videos{
-    left: 787px;
+    left: 780px;
 }
 
 .living{
@@ -1636,3 +1636,163 @@ input {
     writing-mode: horizontal-tb;
 }
 
+/* 轮播图模块 */
+.recommend{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.carousel{
+    width: 550px;
+    height: 242px;
+}
+
+.carousel-item img{
+    width: 100%;
+}
+
+.rec-video{
+    display: flex;
+    position: relative;
+    width: 638px;
+    border-radius: 2px;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.rec-item{
+    width: 206px;
+    height: 116px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.rec-item a{
+    display: block;
+    position: relative;
+}
+
+.rec-item img{
+    width: 100%;
+    border-radius: 2px;
+}
+
+.rec-detail{
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    height: 116px; 
+    padding: 24px 8px 0 8px;
+    border-right: 2px;
+    background: linear-gradient(transparent,  rgba(0,0,0));
+    transition: top .3s;
+    /* 解决文字抖动 */
+    transform: translate3d(0,0,0);
+}
+
+.rec-title{
+    height: 18px;
+    margin-bottom: 10px;
+    line-height: 18px;
+    font-weight: 500;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rec-up,
+.rec-num{
+    color: #e0e0e0;
+    font-size: 12px; 
+}
+
+.rec-icon{
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.rec-num{
+    margin-top: 2px;
+}
+
+.rec-play{
+    opacity: 0;
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    bottom: 8px;
+    right: 8px;
+    background: url("../pictures/play.png");
+    background-size: contain;
+    transition: opacity 2s ease;
+}
+
+.rec-item:hover .rec-detail{
+    top: 0;
+    background: rgba(0, 0, 0, .7)
+}
+
+.rec-item:hover .rec-title{
+    height: 36px;
+    white-space: normal;
+}
+
+.rec-video .rec-item:nth-child(n+7){
+    display: none;
+}
+
+.rec-item:hover .rec-play{
+    opacity: 1;
+}
+
+.left-btn,
+.right-btn{
+    /* display: none; */
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    width: 32px;
+    height: 70px;
+    border-radius: 0 2px 2px 0;
+    background: rgba(0,0,0,.6);
+    transform: translateY(-50%);
+    transition: opacity .3s;
+    cursor: pointer;
+}
+
+.left-btn{
+    left: 0;
+}
+
+.right-btn{
+    right: 0;
+}
+
+.left-btn::before,
+.right-btn::before{
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 3px solid #fff;
+    border-top: none;
+    border-right: none;
+}
+
+.left-btn::before{
+    margin: 27px 0 0 12px;
+    transform: rotate(45deg);
+}
+
+.right-btn::before{
+    margin: 27px 0 0 5px;
+    transform: rotate(-135deg);
+}
+
+.rec-video:hover .btn{
+    opacity: 1;
+}
