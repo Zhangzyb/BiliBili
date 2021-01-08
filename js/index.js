@@ -35,3 +35,27 @@ for (let i = 0; i < tabcate.length; i++) {
 // leftBtn.addEventListener = ('click', () => {
 
 // })
+let carouselItems = document.querySelectorAll(".carousel-item");
+let circleBtn = document.querySelector(".circle-btn");
+
+for (let i = 0; i < carouselItems.length; i++) {
+    let li = document.createElement('li');
+    circleBtn.appendChild(li);
+}
+console.log(circleBtn.children)
+console.log(circleBtn.children.length)
+
+// console.log(circleBtn.childNodes)
+circleBtn.children[0].className = 'cur';
+
+for (let i = 0; i < circleBtn.children.length; i++) {
+    console.log(i)
+    circleBtn.children[i].addEventListener = ('click', () => {
+        for(let i = 0;i < circleBtn.children.length;i++){
+            console.log(i)
+            circleBtn.children[i].className = '';
+            console.log(circleBtn.children[i])
+        }
+        circleBtn.children[i].className = 'cur';
+    })
+}

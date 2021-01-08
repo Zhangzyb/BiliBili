@@ -1514,11 +1514,12 @@ input {
 }
 
 /* 导航模块中的隐藏的子导航 */
-.nav-all-up{
+
+.nav-all-up {
     position: relative;
 }
 
-.sub-nav{
+.sub-nav {
     display: none;
     position: absolute;
     top: -165px;
@@ -1529,25 +1530,24 @@ input {
     border-radius: 4px;
     /* border: 1px solid #ebeef5; */
     background: #fff;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
     z-index: 20;
 }
 
-.dropdown:hover .sub-nav,
-.dropdown:hover .sub-nav-down{
+.dropdown:hover .sub-nav, .dropdown:hover .sub-nav-down {
     display: flex;
     animation: slowBox .4s ease forwards;
 }
 
-.entertain{
+.entertain {
     top: -93px;
 }
 
-.playroom{
+.playroom {
     top: -128px;
 }
 
-.sub-nav a{
+.sub-nav a {
     height: 37px;
     padding: 10px 13px;
     font-size: 12px;
@@ -1555,7 +1555,7 @@ input {
     writing-mode: horizontal-tb;
 }
 
-.sub-nav > .icon-angle-down{
+.sub-nav>.icon-angle-down {
     position: absolute;
     height: 40px;
     left: 12px;
@@ -1566,11 +1566,11 @@ input {
     z-index: 20;
 }
 
-.nav-all-down{
+.nav-all-down {
     position: relative;
 }
 
-.sub-nav-down{
+.sub-nav-down {
     display: none;
     position: absolute;
     max-height: 148px;
@@ -1580,39 +1580,39 @@ input {
     writing-mode: vertical-lr;
     border-radius: 4px;
     background: #fff;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
     z-index: 20;
 }
 
-.orgin{
+.orgin {
     left: 437px;
 }
 
-.games{
+.games {
     left: 501px;
 }
 
-.digit{
+.digit {
     left: 570px;
 }
 
-.circle{
+.circle {
     left: 642px;
 }
 
-.info{
+.info {
     left: 710px;
 }
 
-.videos{
+.videos {
     left: 780px;
 }
 
-.living{
+.living {
     left: 1135px;
 }
 
-.sub-nav-down::before{
+.sub-nav-down::before {
     content: "";
     display: block;
     position: absolute;
@@ -1628,7 +1628,7 @@ input {
     border-left: 10px solid transparent;
 }
 
-.sub-nav-down a{
+.sub-nav-down a {
     height: 37px;
     padding: 10px 13px;
     font-size: 12px;
@@ -1637,22 +1637,74 @@ input {
 }
 
 /* 轮播图模块 */
-.recommend{
+
+.recommend {
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
 }
 
-.carousel{
+.carousel {
+    position: relative;
     width: 550px;
     height: 242px;
+    overflow: hidden;
 }
 
-.carousel-item img{
-    width: 100%;
+.carousel-wrap {
+    /* width: 600%; */
+    /* width: 2200px; */
+    width: 600%;
 }
 
-.rec-video{
+.carousel-item {
+    float: left;
+}
+
+.carousel-item img {
+    width: 550px;
+}
+
+.circle-btn{
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    line-height: 30px;
+    /* background: #f3cb85; */
+}
+
+.circle-btn > li{
+    float: left;
+    width: 10px;
+    height: 10px;
+    margin-left: 10px;
+    border-radius: 50%; 
+    border: 2px solid transparent;
+    vertical-align: middle;
+    background: #fff;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.circle-btn li:hover{
+    border: 2px solid #fff;
+    background-color: #00a1d6;
+    transform: scale(1.3);
+}
+
+.circle-btn .cur,
+.circle-btn .cur:hover{
+    border-width: 0;
+    background-color: transparent;
+    background: url("../images/icon_slide_selected.png") no-repeat;
+    background-size: cover;
+    transform: scale(1.8);
+}
+
+
+
+
+.rec-video {
     display: flex;
     position: relative;
     width: 638px;
@@ -1662,38 +1714,38 @@ input {
     align-content: space-between;
 }
 
-.rec-item{
+.rec-item {
     width: 206px;
     height: 116px;
     border-radius: 2px;
     overflow: hidden;
 }
 
-.rec-item a{
+.rec-item a {
     display: block;
     position: relative;
 }
 
-.rec-item img{
+.rec-item img {
     width: 100%;
     border-radius: 2px;
 }
 
-.rec-detail{
+.rec-detail {
     position: absolute;
     top: 65px;
     left: 0;
     width: 100%;
-    height: 116px; 
+    height: 116px;
     padding: 24px 8px 0 8px;
     border-right: 2px;
-    background: linear-gradient(transparent,  rgba(0,0,0));
+    background: linear-gradient(transparent, rgba(0, 0, 0));
     transition: top .3s;
     /* 解决文字抖动 */
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
 }
 
-.rec-title{
+.rec-title {
     height: 18px;
     margin-bottom: 10px;
     line-height: 18px;
@@ -1704,22 +1756,21 @@ input {
     white-space: nowrap;
 }
 
-.rec-up,
-.rec-num{
+.rec-up, .rec-num {
     color: #e0e0e0;
-    font-size: 12px; 
+    font-size: 12px;
 }
 
-.rec-icon{
+.rec-icon {
     margin-right: 5px;
     vertical-align: middle;
 }
 
-.rec-num{
+.rec-num {
     margin-top: 2px;
 }
 
-.rec-play{
+.rec-play {
     opacity: 0;
     position: absolute;
     width: 28px;
@@ -1731,26 +1782,25 @@ input {
     transition: opacity 2s ease;
 }
 
-.rec-item:hover .rec-detail{
+.rec-item:hover .rec-detail {
     top: 0;
     background: rgba(0, 0, 0, .7)
 }
 
-.rec-item:hover .rec-title{
+.rec-item:hover .rec-title {
     height: 36px;
     white-space: normal;
 }
 
-.rec-video .rec-item:nth-child(n+7){
+.rec-video .rec-item:nth-child(n+7) {
     display: none;
 }
 
-.rec-item:hover .rec-play{
+.rec-item:hover .rec-play {
     opacity: 1;
 }
 
-.left-btn,
-.right-btn{
+.left-btn, .right-btn {
     /* display: none; */
     opacity: 0;
     position: absolute;
@@ -1758,22 +1808,21 @@ input {
     width: 32px;
     height: 70px;
     border-radius: 0 2px 2px 0;
-    background: rgba(0,0,0,.6);
+    background: rgba(0, 0, 0, .6);
     transform: translateY(-50%);
     transition: opacity .3s;
     cursor: pointer;
 }
 
-.left-btn{
+.left-btn {
     left: 0;
 }
 
-.right-btn{
+.right-btn {
     right: 0;
 }
 
-.left-btn::before,
-.right-btn::before{
+.left-btn::before, .right-btn::before {
     content: "";
     display: block;
     width: 12px;
@@ -1783,16 +1832,16 @@ input {
     border-right: none;
 }
 
-.left-btn::before{
+.left-btn::before {
     margin: 27px 0 0 12px;
     transform: rotate(45deg);
 }
 
-.right-btn::before{
+.right-btn::before {
     margin: 27px 0 0 5px;
     transform: rotate(-135deg);
 }
 
-.rec-video:hover .btn{
+.rec-video:hover .btn {
     opacity: 1;
 }
