@@ -1644,17 +1644,18 @@ input {
     margin-bottom: 40px;
 }
 
-.carousel {
+.carousel-wrap {
     position: relative;
     width: 550px;
     height: 242px;
     overflow: hidden;
 }
 
-.carousel-wrap {
+.carousel {
     /* width: 600%; */
     /* width: 2200px; */
-    width: 600%;
+    position: absolute;
+    width: 500%;
 }
 
 .carousel-item {
@@ -1662,7 +1663,9 @@ input {
 }
 
 .carousel-item img {
+    display: block;
     width: 550px;
+    border-radius: 2px;
 }
 
 .circle-btn{
