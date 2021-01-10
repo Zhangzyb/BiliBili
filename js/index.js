@@ -18,7 +18,6 @@ for (let i = 0; i < lis.length; i++) {
 // 两部分没有区分，所以当点击了动态里的视频动态或专栏动态等选项后，历史选项卡的动态历史的样式会消失
 // 一个小Bug，懒得改了
 for (let i = 0; i < tabcate.length; i++) {
-
     tabcate[i].addEventListener('click', () => {
         for (let i = 0; i < tabcate.length; i++) {
             tabcate[i].className = '';
@@ -48,27 +47,52 @@ let animate = (obj, target, callback) => {
 
 const carouselWidth = carousel.parentElement.offsetWidth;
 
+let curChange = () => {
+    for (let i = 0; i < circleBtn.children.length; i++) {
+        circleBtn.children[i].className = '';
+    }
+}
+
 for (let i = 0; i < carouselItems.length; i++) {
     let li = document.createElement('li');
     circleBtn.appendChild(li);
     li.addEventListener('click', () => {
-        for (let i = 0; i < circleBtn.children.length; i++) {
-            circleBtn.children[i].className = '';
-        }
+        clearInterval(gloablTimer);
+        curChange();
         circleBtn.children[i].className = 'cur';
-        // carousel.style.left = -i*carouselWidth + 'px';
-        animate(carousel, -i * carouselWidth)
+        animate(carousel, -i * carouselWidth, () => {
+            autoChange();
+        })
     })
 }
 circleBtn.children[0].className = 'cur';
 let index = 0;
-setInterval(() => {
-    index++;
-    if(index == carouselItems.length){
-        carousel.style.left = 0;
-        index = 0;
-    }
-    animate(carousel, -index * 550);
-}, 1000)
+let gloablTimer;
+
+// 自动播放
+let autoChange = () => {
+    gloablTimer = setInterval(() => {
+        index++;
+        if (index == carouselItems.length) {
+            carousel.style.left = 0;
+            index = 0;
+        }
+        curChange();
+        circleBtn.children[index].className = 'cur';
+        animate(carousel, -index * 550);
+    }, 5000)
+}
+
+autoChange();
+
+carousel.addEventListener('mouseover', () => {
+    clearInterval(gloablTimer);
+})
+
+carousel.addEventListener('mouseleave', () => {
+    autoChange();
+})
+
+
 
 

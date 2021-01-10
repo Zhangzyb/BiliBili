@@ -1652,10 +1652,8 @@ input {
 }
 
 .carousel {
-    /* width: 600%; */
-    /* width: 2200px; */
     position: absolute;
-    width: 500%;
+    width: 600%;
 }
 
 .carousel-item {
@@ -1703,6 +1701,13 @@ input {
     background-size: cover;
     transform: scale(1.8);
 }
+
+
+
+
+
+
+
 
 
 
