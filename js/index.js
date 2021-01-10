@@ -26,72 +26,9 @@ for (let i = 0; i < tabcate.length; i++) {
     })
 }
 
-// 轮播图
-let carousel = document.querySelector(".carousel")
-let carouselItems = carousel.children;
-let circleBtn = document.querySelector(".circle-btn");
 
-// 动画封装
-let animate = (obj, target, callback) => {
-    clearInterval(obj.timer);
-    obj.timer = setInterval(() => {
-        let step = (target - obj.offsetLeft) / 10;
-        step = step > 0 ? Math.ceil(step) : Math.floor(step);
-        if (obj.offsetLeft === target) {
-            clearInterval(obj.timer)
-            callback && callback();
-        }
-        obj.style.left = obj.offsetLeft + step + 'px';
-    }, 15)
-}
-
-const carouselWidth = carousel.parentElement.offsetWidth;
-
-let curChange = () => {
-    for (let i = 0; i < circleBtn.children.length; i++) {
-        circleBtn.children[i].className = '';
-    }
-}
-
-for (let i = 0; i < carouselItems.length; i++) {
-    let li = document.createElement('li');
-    circleBtn.appendChild(li);
-    li.addEventListener('click', () => {
-        clearInterval(gloablTimer);
-        curChange();
-        circleBtn.children[i].className = 'cur';
-        animate(carousel, -i * carouselWidth, () => {
-            autoChange();
-        })
-    })
-}
-circleBtn.children[0].className = 'cur';
-let index = 0;
-let gloablTimer;
-
-// 自动播放
-let autoChange = () => {
-    gloablTimer = setInterval(() => {
-        index++;
-        if (index == carouselItems.length) {
-            carousel.style.left = 0;
-            index = 0;
-        }
-        curChange();
-        circleBtn.children[index].className = 'cur';
-        animate(carousel, -index * 550);
-    }, 5000)
-}
-
-autoChange();
-
-carousel.addEventListener('mouseover', () => {
-    clearInterval(gloablTimer);
-})
-
-carousel.addEventListener('mouseleave', () => {
-    autoChange();
-})
+let carousel = document.querySelector('.carousel-wrap');
+Carousel(carousel)
 
 
 

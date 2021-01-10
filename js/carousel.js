@@ -34,12 +34,16 @@ let Carousel = (focusObj) => {
         }
         obj.children[index].className = cur;
     }
+    
+    // 分别用于控制图片和圆点显示
+    let imgIndex = btnIndex = 0;
 
     // 根据图片数生成小圆点数，并为每个圆点绑定点击事件。
     for (let i = 0; i < carouselObj.children.length; i++) {
         let li = document.createElement('li');
         carouselBtn.appendChild(li);
         li.addEventListener('click', () => {
+            btnIndex = imgIndex = i;
             changeClass(carouselBtn, i, 'cur');
             animate(carouselObj, -i * focusObjWidth);
         });
@@ -50,7 +54,6 @@ let Carousel = (focusObj) => {
     carouselObj.appendChild(copyChild);
 
     // 自动轮播
-    let imgIndex = btnIndex = 0;
     let gloablTimer;
     let autoChange = () => {
         gloablTimer = setInterval(() => {
@@ -68,64 +71,13 @@ let Carousel = (focusObj) => {
         }, 5000)
     }
     autoChange(); 
+    // 鼠标经过图片时移除定时器，离开时重启定时器
+    carouselObj.addEventListener('mouseover', () => {
+        clearInterval(gloablTimer);
+    })
+    carouselObj.addEventListener('mouseleave', () => {
+        autoChange();
+    })
 }
 
-let carousel = document.querySelector('.carousel-wrap');
-Carousel(carousel)
 
-
-
-// let carousel = document.querySelector(".carousel")
-// let carouselItems = carousel.children;
-// let circleBtn = document.querySelector(".circle-btn");
-
-// // 动画封装
-
-
-// const carouselWidth = carousel.parentElement.offsetWidth;
-
-// let curChange = () => {
-//     for (let i = 0; i < circleBtn.children.length; i++) {
-//         circleBtn.children[i].className = '';
-//     }
-// }
-
-// for (let i = 0; i < carouselItems.length; i++) {
-//     let li = document.createElement('li');
-//     circleBtn.appendChild(li);
-//     li.addEventListener('click', () => {
-//         clearInterval(gloablTimer);
-//         curChange();
-//         circleBtn.children[i].className = 'cur';
-//         animate(carousel, -i * carouselWidth, () => {
-//             autoChange();
-//         })
-//     })
-// }
-// circleBtn.children[0].className = 'cur';
-// let index = 0;
-// let gloablTimer;
-
-// 自动播放
-// let autoChange = () => {
-//     gloablTimer = setInterval(() => {
-//         index++;
-//         if (index == carouselItems.length) {
-//             carousel.style.left = 0;
-//             index = 0;
-//         }
-//         curChange();
-//         circleBtn.children[index].className = 'cur';
-//         animate(carousel, -index * 550);
-//     }, 5000)
-// }
-
-// autoChange();
-
-// carousel.addEventListener('mouseover', () => {
-//     clearInterval(gloablTimer);
-// })
-
-// carousel.addEventListener('mouseleave', () => {
-//     autoChange();
-// })
