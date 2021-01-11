@@ -34,7 +34,7 @@ let Carousel = (focusObj) => {
         }
         obj.children[index].className = cur;
     }
-    
+
     // 分别用于控制图片和圆点显示
     let imgIndex = btnIndex = 0;
 
@@ -70,7 +70,7 @@ let Carousel = (focusObj) => {
             changeClass(carouselBtn, btnIndex, 'cur');
         }, 5000)
     }
-    autoChange(); 
+    autoChange();
     // 鼠标经过图片时移除定时器，离开时重启定时器
     carouselObj.addEventListener('mouseover', () => {
         clearInterval(gloablTimer);
