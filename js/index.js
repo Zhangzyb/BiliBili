@@ -26,10 +26,24 @@ for (let i = 0; i < tabcate.length; i++) {
     })
 }
 
-
+// 轮播图
 let carousel = document.querySelector('.carousel-wrap');
 Carousel(carousel)
 
+// 视频预览
+let sprite = document.querySelectorAll('.sprite');
+const spriteWidth = sprite[0].offsetWidth;
+
+for (let i = 0; i < sprite.length; i++) {
+    sprite[i].addEventListener('mousemove', (e) => {
+        let moveWidth = e.pageX - sprite[i].getBoundingClientRect().left;
+        let per = Math.ceil(moveWidth / spriteWidth * 100);
+        let index = Math.floor(per / 10);
+        let playBar = sprite[i].querySelector('.play-bar > span');
+        playBar.style.width = per + '%';
+        sprite[i].style.backgroundPosition = -index * spriteWidth + "px " + "0px";
+    })
+}
 
 
 

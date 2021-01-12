@@ -1,4 +1,5 @@
 /* 顶部 */
+
 .header {
     position: relative;
     width: 100%;
@@ -20,7 +21,6 @@
     width: 100%;
     height: 56px;
     padding: 10px 24px;
-    line-height: 30px;
     justify-content: space-between;
     align-items: flex-start;
     background-color: rgba(0, 0, 0, 0.459);
@@ -32,19 +32,19 @@
 .menu-link-ul {
     display: flex;
     padding: 2px 0;
-    align-items: center; 
+    align-items: center;
 }
 
-.menu-link{
+.menu-link {
     flex-shrink: 0;
 }
 
-.menu-link-ul > li {
+.menu-link-ul>li {
     position: relative;
     margin-right: 12px;
 }
 
-.menu-link-ul > li > a {
+.menu-link-ul>li>a {
     display: block;
     height: 32px;
     color: #fff;
@@ -67,7 +67,7 @@
     margin: 0 10px;
 }
 
-.search-box{
+.search-box {
     display: flex;
     padding-left: 16px;
     border-radius: 2px;
@@ -114,8 +114,7 @@ input {
     line-height: 36px;
 }
 
-.menu-user-center .user-item>a, 
-.menu-user-center .user-item>a:hover {
+.menu-user-center .user-item>a, .menu-user-center .user-item>a:hover {
     color: #fff;
 }
 
@@ -143,7 +142,7 @@ input {
 
 /* 游戏中心下拉 */
 
- .gameCenter {
+.gameCenter {
     display: none;
     position: absolute;
     width: 466px;
@@ -284,7 +283,7 @@ input {
 
 .gameList li a:hover+.gamePic {
     display: block;
-} 
+}
 
 /* 直播下拉 */
 
@@ -1407,14 +1406,14 @@ input {
     width: 100%;
     height: 100px;
     background: linear-gradient(rgba(0, 0, 0, .4), transparent);
-} 
+}
 
- .header>img {
+.header>img {
     position: absolute;
     left: 160px;
     bottom: 13px;
     width: 165px;
-} 
+}
 
 /* 导航模块 */
 
@@ -1831,7 +1830,8 @@ input {
     right: 8px;
     background: url("../pictures/play.png");
     background-size: contain;
-    transition: opacity 2s ease;
+    transition: opacity .3s;
+    transition-delay: .2s;
 }
 
 .rec-item:hover .rec-detail {
@@ -1848,7 +1848,7 @@ input {
     display: none;
 }
 
-.rec-item:hover .rec-play {
+.rec-detail:hover .rec-play {
     opacity: 1;
 }
 
@@ -1952,10 +1952,112 @@ input {
     width: 206px;
 }
 
-.spread-item img {
+.spread-video{
+    position: relative;
+    width: 100%;
+    height: 116px;
+}
+
+.spread-video::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 48px;
+    border-radius: 2px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+}
+
+.spread-all{
+    display: block;
+    height: 116px;
+}
+
+.spread-all:hover + .rec-play{
+    opacity: 1;
+}
+
+.spread-all img {
     display: block;
     width: 100%;
     height: 116px;
+}
+
+.information{
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 6px 8px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 16px;
+    justify-content: space-between;
+}
+
+.spv-title {
+    display: -webkit-box;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 10px 0 8px;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-weight: 500;
+    padding-right: 12px;
+}
+
+/* 精灵图的使用 */
+.sprite{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../pictures/sprite_1.webp") no-repeat;
+    background-size: 2060px;
+    background-position: 0px 0px;
+    transition: opacity .3s;
+}
+
+.spread-all:hover .sprite{
+    opacity: 1;
+}
+
+.play-bar{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 10px;
+    border-color: #000;
+    border-style: solid;
+    border-width: 4px 8px;
+    background: #444;
+}
+
+.play-bar span{
+    display: block;
+    width: 0%;
+    background: #fff;
+    height: 2px;
+    transition: width .12s;
+}
+
+.spv-up {
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 12px;
+    color: #999;
+    line-height: 16px;
+    margin-top: 60px;
 }
 
 .online {
