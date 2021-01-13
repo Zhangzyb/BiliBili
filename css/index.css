@@ -2,12 +2,12 @@
 
 .header {
     position: relative;
+    display: flex;
     width: 100%;
     height: 9.375vw;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     min-height: 155px;
     background: url("../images/background.png");
-    background-size: cover;
     min-height: 155px;
     background-color: #f9f9f9;
     background-repeat: no-repeat;
@@ -474,7 +474,6 @@ input {
 
 .box img {
     display: block;
-    width: 100%;
 }
 
 .box span {
@@ -575,7 +574,6 @@ input {
     position: absolute;
     left: 0;
     top: 36px;
-    width: 100%;
     height: 36px;
     padding-bottom: 3px;
 }
@@ -605,10 +603,6 @@ input {
 .phone:hover .download {
     display: block;
     animation: slowBox .4s ease forwards;
-}
-
-.download img {
-    width: 100%;
 }
 
 .download .icon-xiaosanjiao {
@@ -926,7 +920,6 @@ input {
 }
 
 .vip a img {
-    width: 100%;
     border-radius: 2px;
 }
 
@@ -1246,7 +1239,6 @@ input {
 }
 
 .item-img img {
-    width: 100%;
     border-radius: 2px;
 }
 
@@ -1778,7 +1770,6 @@ input {
 }
 
 .rec-item img {
-    width: 100%;
     border-radius: 2px;
 }
 
@@ -1899,44 +1890,65 @@ input {
 
 /* 推广模块 */
 
-.spread {
+.box-content {
     display: flex;
+    margin-bottom: 40px;
     justify-content: space-between;
 }
 
-.extentions {
+.l-wrap {
     width: 854px;
 }
 
-.spread-title {
+.r-wrap {
+    width: 320px;
+}
+
+.box-title {
+    display: flex;
     height: 36px;
     margin-bottom: 16px;
     line-height: 36px;
+    justify-content: space-between;
 }
 
-.spread-title>span {
-    margin-right: 15px;
+.l-con>span {
+    margin-right: 20px;
     color: #212121;
     font-size: 20px;
     cursor: default;
 }
 
-.icon-xingzhuang82 {
-    display: inline-block;
-    margin-bottom: 2px;
+.l-con {
+    display: flex;
+}
+
+.l-con>i {
+    width: 36px;
+    height: 36px;
+    margin-right: 6px;
     color: rgb(255, 215, 120);
-    font-size: 25px;
-    vertical-align: middle;
+    font-size: 28px;
 }
 
-.icon-huoyan1 {
-    margin-right: 3px;
-    color: #f0361b;
+.l-info {
+    color: #505050;
+    line-height: 36px;
 }
 
-.spread-title a {
+.l-info a {
     color: #505050;
     font-size: 12px;
+}
+
+.l-info span {
+    margin-right: 24px;
+    font-size: 12px;
+}
+
+.l-info i {
+    margin-right: 3px;
+    color: #f0361b;
 }
 
 .spread-title a:hover {
@@ -1952,49 +1964,33 @@ input {
     width: 206px;
 }
 
-.spread-video{
+.spread-video {
     position: relative;
     width: 100%;
     height: 116px;
 }
 
-.spread-video::before{
-    content: "";
+.pic-all, .pic-all img {
     display: block;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 48px;
     border-radius: 2px;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
 }
 
-.spread-all{
-    display: block;
-    height: 116px;
-}
-
-.spread-all:hover + .rec-play{
+.pic-all:hover+.rec-play {
     opacity: 1;
 }
 
-.spread-all img {
-    display: block;
-    width: 100%;
-    height: 116px;
-}
-
-.information{
+.information {
     display: flex;
     position: absolute;
     right: 0;
     bottom: 0;
     width: 100%;
+    height: 28px;
     padding: 6px 8px;
     font-size: 12px;
     color: #fff;
     line-height: 16px;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -2013,7 +2009,8 @@ input {
 }
 
 /* 精灵图的使用 */
-.sprite{
+
+.sprite {
     opacity: 0;
     position: absolute;
     top: 0;
@@ -2026,11 +2023,11 @@ input {
     transition: opacity .3s;
 }
 
-.spread-all:hover .sprite{
+.pic-all:hover .sprite {
     opacity: 1;
 }
 
-.play-bar{
+.play-bar {
     position: absolute;
     left: 0;
     top: 0;
@@ -2042,7 +2039,7 @@ input {
     background: #444;
 }
 
-.play-bar span{
+.play-bar span {
     display: block;
     width: 0%;
     background: #fff;
@@ -2060,10 +2057,6 @@ input {
     margin-top: 60px;
 }
 
-.online {
-    width: 320px;
-}
-
 .online-list {
     height: 30px;
     margin: 3px 0 19px;
@@ -2076,14 +2069,13 @@ input {
     background: #f4f4f4;
 }
 
-.online>a {
+.online>a, .ad a {
     display: block;
     position: relative;
     border-radius: 2px;
 }
 
 .online>a img {
-    width: 100%;
     border-radius: 2px;
 }
 
@@ -2097,4 +2089,148 @@ input {
     vertical-align: middle;
     background: url("../pictures/下载.png") no-repeat;
     background-size: cover;
+}
+
+.ad {
+    margin-bottom: 46px;
+}
+
+/* 正在直播 */
+
+.live-header>.l-con i {
+    margin-right: 6px;
+    color: rgb(72, 207, 229);
+    font-size: 30px;
+}
+
+.live-list {
+    display: flex;
+    height: 404px;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.live-item {
+    width: 206px;
+}
+
+.ex-btn {
+    display: flex;
+    align-items: center;
+}
+
+.btn-base {
+    display: flex;
+    height: 22px;
+    font-size: 12px;
+    color: #505050;
+    text-align: center;
+    border: 1px solid silver;
+    border-radius: 2px;
+    transition: all .2s;
+    line-height: 16px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn-base:hover {
+    background-color: #f4f4f4;
+}
+
+.btn-change {
+    padding: 0 0 0 6px;
+    width: 72px;
+}
+
+.btn-change:hover i {
+    transform: rotate(360deg);
+}
+
+.btn-more {
+    padding: 0 0 0 12px;
+    width: 58px;
+    margin-left: 12px;
+}
+
+.btn-more:hover {
+    color: #505050;
+}
+
+.btn-more::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    margin-left: 1px;
+    border: 1px solid;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(45deg);
+}
+
+.btn-change i {
+    margin-right: 6px;
+    font-size: 13px;
+    transition: all .5s;
+}
+
+.live-item .live-pic {
+    position: relative;
+}
+
+.live-pic:hover .live-mask {
+    opacity: 1;
+}
+
+.live-mask {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    background: url('../pictures/live-back_1.jpg') no-repeat;
+    background-size: contain;
+    transition: opacity .3s;
+}
+
+.item-info {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.up-avatar img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.video-desc {
+    width: 158px;
+}
+
+.video-desc p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.video-title {
+    line-height: 20px;
+}
+
+.video-detail {
+    font-size: 12px;
+    color: #505050;
+    line-height: 18px;
+    margin-top: 2px;
+}
+
+.video-tag {
+    font-size: 12px;
+    line-height: 16px;
+    color: #999;
+    margin-top: 8px;
 }
