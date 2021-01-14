@@ -9,9 +9,6 @@
 //    <div class="btn"></div>  
 // </div>
 
-// 点击时给相应元素加上选中样式，并取消其他元素的选中样式。
-
-
 class CarouselObj {
     constructor(Elenobj) {
         this.focusObjWidth = Elenobj.offsetWidth; // 轮播区域宽度

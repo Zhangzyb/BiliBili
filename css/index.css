@@ -1653,6 +1653,7 @@ input {
 .carousel-item {
     position: relative;
     float: left;
+    width: 550px;
 }
 
 .carousel-item::before {
@@ -1664,12 +1665,6 @@ input {
     width: 550px;
     height: 48px;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.522));
-}
-
-.carousel-item img {
-    display: block;
-    width: 550px;
-    border-radius: 2px;
 }
 
 .circle-btn {
@@ -1708,10 +1703,14 @@ input {
 
 .carousel-info {
     position: absolute;
+    width: 70%;
     bottom: 10px;
     left: 12px;
     color: #fff;
     font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .more-info {
@@ -2233,4 +2232,99 @@ input {
     line-height: 16px;
     color: #999;
     margin-top: 8px;
+}
+
+.live-tabBar {
+    display: flex;
+    height: 36px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    align-items: center;
+}
+
+.live-tabBar div {
+    font-size: 12px;
+    line-height: 18px;
+    height: 22px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.live-tabBar .cur {
+    border-bottom: 1px solid #00a1d6;
+    color: #00a1d6;
+}
+
+.live-content {
+    width: 100%;
+}
+
+.content-item {
+    display: none;
+    width: 100%;
+}
+
+.rank-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.rank-up img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.rank-up {
+    display: flex;
+    align-items: center;
+}
+
+.rank-num {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    color: #999;
+    text-align: center;
+    line-height: 18px;
+    border-radius: 2px;
+}
+
+.rank-top {
+    color: #fff;
+    background: #00a1d6;
+}
+
+.row {
+    color: #505050;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.up-follow {
+    color: #999;
+    font-size: 12px;
+}
+
+.focus-up {
+    text-align: center;
+    line-height: 16px;
+    font-size: 13px;
+    color: #999;
+}
+
+.live-rec {
+    position: relative;
+    height: 330px;
+    overflow: hidden;
+}
+
+.live-rec .carousel {
+    width: 400%;
+}
+
+.live-rec .carousel-item {
+    width: 320px;
 }
