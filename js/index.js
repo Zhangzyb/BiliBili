@@ -28,7 +28,8 @@ for (let i = 0; i < tabcate.length; i++) {
 
 // 轮播图
 let carousel = document.querySelector('.carousel-wrap');
-Carousel(carousel)
+let k = new CarouselObj(carousel);
+k.carousel();
 
 // 视频预览
 let sprite = document.querySelectorAll('.sprite');
@@ -37,13 +38,39 @@ const spriteWidth = sprite[0].offsetWidth;
 for (let i = 0; i < sprite.length; i++) {
     sprite[i].addEventListener('mousemove', (e) => {
         let moveWidth = e.pageX - sprite[i].getBoundingClientRect().left;
-        let per = Math.ceil(moveWidth / spriteWidth * 100); 
+        let per = Math.ceil(moveWidth / spriteWidth * 100);
         let index = Math.floor(per / 10);
         let playBar = sprite[i].querySelector('.play-bar > span');
         playBar.style.width = per + '%';
         sprite[i].style.backgroundPosition = -index * spriteWidth + "px " + "0px";
     })
 }
+
+// 切换选项卡
+let switchTab = (switchObj, cur) => {
+    let switchtabs = switchObj.children;
+    let tabCon = switchObj.nextElementSibling.children;
+    for (let i = 0; i < switchtabs.length; i++) {
+        switchtabs[i].addEventListener('click', () => {
+            for (let i = 0; i < switchtabs.length; i++) {
+                switchtabs[i].className = '';
+            }
+            switchtabs[i].className = cur;
+            for(let i = 0;i < tabCon.length;i++){
+                tabCon[i].style.display = 'None';
+            }
+            tabCon[i].style.display = 'block';
+        })
+    }
+}
+
+let liveTabs = document.querySelector('.live-tabBar');
+switchTab(liveTabs, 'cur');
+
+// 直播模块的轮播图
+let liveCarousel = document.querySelector('.live-rec')
+let s = new CarouselObj(liveCarousel);
+s.carousel();
 
 
 
