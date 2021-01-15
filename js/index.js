@@ -46,31 +46,48 @@ for (let i = 0; i < sprite.length; i++) {
     })
 }
 
-// 切换选项卡
-let switchTab = (switchObj, cur) => {
-    let switchtabs = switchObj.children;
-    let tabCon = switchObj.nextElementSibling.children;
-    for (let i = 0; i < switchtabs.length; i++) {
-        switchtabs[i].addEventListener('click', () => {
-            for (let i = 0; i < switchtabs.length; i++) {
-                switchtabs[i].className = '';
-            }
-            switchtabs[i].className = cur;
-            for(let i = 0;i < tabCon.length;i++){
-                tabCon[i].style.display = 'None';
-            }
-            tabCon[i].style.display = 'block';
-        })
+// 切换选项卡封装
+class SwitchObj {
+    constructor(switchTab, tabConent, cur, showMethod) {
+        this.switchTab = switchTab;
+        this.tabConent = tabConent;
+        this.cur = cur;
+        this.showMethod = showMethod
+    }
+
+    switch() {
+        for (let i = 0;i < this.switchTab.length;i++) {
+            this.switchTab[i].addEventListener('click', () =>{
+                for(let i = 0;i < this.switchTab.length;i++){
+                    this.switchTab[i].className = '';
+                }
+                this.switchTab[i].className = this.cur;
+                for (let i = 0; i < this.tabConent.length; i++) {
+                    this.tabConent[i].style.display = 'None';
+                }
+                this.tabConent[i].style.display = this.showMethod;
+            })
+        }
     }
 }
 
-let liveTabs = document.querySelector('.live-tabBar');
-switchTab(liveTabs, 'cur');
+// 直播模块右侧切换选项卡
+let liveTabs = document.querySelector('.live-tabBar').children;
+let liveContent = document.querySelector('.live-content').children;
+let liveSwitch = new SwitchObj(liveTabs, liveContent, 'cur', 'block' );
+liveSwitch.switch();
 
 // 直播模块的轮播图
 let liveCarousel = document.querySelector('.live-rec')
 let s = new CarouselObj(liveCarousel);
 s.carousel();
+
+// 番剧模块的选项卡
+let dramaTabs = document.querySelector('.switch-tab').children;
+let dramaContent = document.querySelector('.drama-list').children;
+let dramaSwitch = new SwitchObj(dramaTabs, dramaContent, 'cur', 'flex');
+dramaSwitch.switch();
+
 
 
 
