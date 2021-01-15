@@ -1903,14 +1903,6 @@ input {
     width: 320px;
 }
 
-.box-title {
-    display: flex;
-    height: 36px;
-    margin-bottom: 16px;
-    line-height: 36px;
-    justify-content: space-between;
-}
-
 .l-con>span {
     margin-right: 20px;
     color: #212121;
@@ -1976,21 +1968,6 @@ input {
 
 .pic-all:hover+.rec-play {
     opacity: 1;
-}
-
-.information {
-    display: flex;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 28px;
-    padding: 6px 8px;
-    font-size: 12px;
-    color: #fff;
-    line-height: 16px;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .spv-title {
@@ -2103,6 +2080,14 @@ input {
 }
 
 .live-list {
+    display: flex;
+    height: 404px;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.list-box {
     display: flex;
     height: 404px;
     flex-flow: row wrap;
@@ -2312,7 +2297,7 @@ input {
     text-align: center;
     line-height: 16px;
     font-size: 13px;
-    color: #999;
+    color: #505050;
 }
 
 .live-rec {
@@ -2327,4 +2312,170 @@ input {
 
 .live-rec .carousel-item {
     width: 320px;
+}
+
+/* 通用视频卡片样式 */
+
+.box-title {
+    display: flex;
+    height: 36px;
+    margin-bottom: 16px;
+    line-height: 36px;
+    justify-content: space-between;
+}
+
+.box-list {
+    display: flex;
+    height: 404px;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.box-item {
+    width: 206px;
+}
+
+.box-all {
+    display: block;
+    position: relative;
+    height: 116px;
+}
+
+.information {
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 28px;
+    padding: 6px 8px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 16px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info-left {
+    display: flex;
+    align-items: center;
+}
+
+.info-left span {
+    display: flex;
+}
+
+.info-left span i {
+    margin-right: 5px;
+}
+
+.info-left span:first-child {
+    margin-right: 10px;
+}
+
+.late-play {
+    opacity: 0;
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    bottom: 8px;
+    right: 8px;
+    background: url("../pictures/play.png");
+    background-size: contain;
+    transition: opacity .3s;
+    transition-delay: .2s;
+}
+
+.box-all:hover .sprite {
+    opacity: 1;
+}
+
+.box-all:hover .late-play {
+    opacity: 1;
+}
+
+.box-header {
+    display: -webkit-box;
+    height: 40px;
+    margin: 10px 0 8px;
+    padding-right: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.box-up {
+    display: flex;
+    font-size: 12px;
+    color: #999;
+    line-height: 16px;
+}
+
+.box-icon {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.rank-wrap {
+    display: flex;
+    margin-bottom: 18px;
+    justify-content: space-between;
+}
+
+.rank-img{
+    position: relative;
+    cursor: pointer;
+}
+
+.rank-img:hover .late-play{
+    opacity: 1;
+}
+
+.rank-img img {
+    width: 112px;
+    height: 63px;
+}
+
+.rank-info {
+    display: flex;
+    width: 290px;
+    justify-content: space-between;
+}
+
+.rank-detail{
+    margin-left: 12px;
+}
+
+.rank-detail span{
+    display: block;
+    margin-top: 8px;
+    color: #999;
+    font-size: 12px;
+}
+
+.rank-pre{
+    display: -webkit-box;
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.box-rank .rank-num{
+    flex-shrink: 0;
+}
+
+.rank-title{
+    height: 20px;
+    line-height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
