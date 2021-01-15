@@ -1405,6 +1405,7 @@ input {
     left: 160px;
     bottom: 13px;
     width: 165px;
+    height: 79px;
 }
 
 /* 导航模块 */
@@ -1917,7 +1918,6 @@ input {
 .l-con>i {
     width: 36px;
     height: 36px;
-    margin-right: 6px;
     color: rgb(255, 215, 120);
     font-size: 28px;
 }
@@ -2362,6 +2362,10 @@ input {
     align-items: center;
 }
 
+.info-left i {
+    margin-right: 2px;
+}
+
 .info-left span {
     display: flex;
 }
@@ -2427,12 +2431,12 @@ input {
     justify-content: space-between;
 }
 
-.rank-img{
+.rank-img {
     position: relative;
     cursor: pointer;
 }
 
-.rank-img:hover .late-play{
+.rank-img:hover .late-play {
     opacity: 1;
 }
 
@@ -2447,18 +2451,18 @@ input {
     justify-content: space-between;
 }
 
-.rank-detail{
+.rank-detail {
     margin-left: 12px;
 }
 
-.rank-detail span{
+.rank-detail span {
     display: block;
     margin-top: 8px;
     color: #999;
     font-size: 12px;
 }
 
-.rank-pre{
+.rank-pre {
     display: -webkit-box;
     height: 40px;
     line-height: 20px;
@@ -2468,14 +2472,119 @@ input {
     -webkit-box-orient: vertical;
 }
 
-.box-rank .rank-num{
+.box-rank .rank-num {
     flex-shrink: 0;
 }
 
-.rank-title{
+.rank-title {
     height: 20px;
     line-height: 18px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.switch-tab {
+    display: flex;
+}
+
+.switch-tab div:first-child {
+    margin-left: 4px;
+}
+
+.switch-tab > div {
+    height: 30px;
+    margin-right: 24px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.switch-tab>.cur {
+    color: #00a1d6;
+    border-bottom: 1px solid #00a1d6;
+}
+
+.date-btn {
+    width: 112px;
+    height: 30px;
+    border: 1px solid #00a1d6;
+    border-radius: 2px;
+    background: #fff;
+    text-align: center;
+    line-height: 27px;
+    color: #00a1d6;
+}
+
+.date-btn::after {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-left: 2px;
+    border: 1px solid;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(45deg);
+}
+
+.date-btn:hover {
+    color: #fff;
+    background: #00a1d6;
+}
+
+.drama-list {
+    height: 376px;
+    overflow: auto;
+}
+
+.drama-con {
+    display: none;
+    flex-flow: row wrap;
+}
+
+.drama-item {
+    display: flex;
+    width: 227px;
+    margin: 0 30px 24px 0;
+    justify-content: space-between;
+}
+
+.drama-item>a {
+    display: block;
+    width: 70px;
+    height: 70px;
+    margin-right: 12px;
+}
+
+.drama-desc {
+    display: flex;
+    width: 152px;
+    flex-flow: column;
+    justify-content: space-between;
+    padding: 5px 0 4px;
+}
+
+.drama-desc a:last-child {
+    color: #00a1d6;
+    font-size: 12px;
+}
+
+.rank-drama {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.drama-title {
+    width: 198px;
+    line-height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.drama-proc {
+    font-size: 12px;
+    color: #999;
 }
