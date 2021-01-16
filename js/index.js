@@ -88,6 +88,9 @@ let dramaContent = document.querySelector('.drama-list').children;
 let dramaSwitch = new SwitchObj(dramaTabs, dramaContent, 'cur', 'flex');
 dramaSwitch.switch();
 
-
+// 番剧动态的轮播图
+let dramaBox = document.querySelector('.box-carousel-wrap');
+let dramaCarousel = new CarouselObj(dramaBox);
+dramaCarousel.carousel();
 
 
