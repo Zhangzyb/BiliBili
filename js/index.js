@@ -110,3 +110,16 @@ let comicsContent = document.querySelector('.comics-list').children;
 let comicsSwitch = new SwitchObj(comicsTabs, comicsContent, 'cur', 'flex');
 comicsSwitch.switch();
 
+// 侧边栏
+let sideBar = document.querySelector('.side-bar');
+document.addEventListener('scroll', () => {
+    if (window.pageYOffset >= 200) {
+        // sideBar.style.position = 'fixed';
+        // sideBar.style.top = '50px';
+    }
+    else{
+        // sideBar.style.position = 'absolute';
+        // sideBar.style.top = '100px';
+    }
+})
+

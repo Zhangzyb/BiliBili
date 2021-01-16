@@ -1411,6 +1411,7 @@ input {
 /* 导航模块 */
 
 .main {
+    position: relative;
     width: 1198px;
     margin: 0 auto;
 }
@@ -2746,7 +2747,133 @@ input {
 }
 
 /* 底部 */
-.footer{
+
+.footer {
+    height: 432px;
+    text-align: center;
     background: #f6f9fa;
-    padding: 30px 0;
+}
+
+/* 联系客服 */
+
+.contact {
+    position: fixed;
+    left: 0;
+    top: calc(50% - 30px);
+    margin-top: -36px;
+    width: 28px;
+    height: 72px;
+    transition: all .3s;
+    font-size: 12px;
+    color: #505050;
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    box-shadow: 0 6px 10px 0 #e7e7e7;
+    border-radius: 0 2px 2px 0;
+    padding: 8px 7px;
+    line-height: 14px;
+    cursor: pointer;
+}
+
+.contact:hover {
+    color: rgb(80, 80, 80);
+    background: #f4f4f4;
+}
+
+/* 侧边栏 */
+
+.side-bar {
+    position: absolute;
+    top: 213px;
+    right: -77px;
+    width: 54px;
+    padding: 6px 0 0;
+    border-radius: 10px;
+    border: 1px solid #e7e7e7;
+    background-color: #fff;
+}
+
+.side-bar::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -17px;
+    left: 17px;
+    width: 18px;
+    height: 18px;
+    border: 5px solid#505050;
+    border-top: none;
+    border-right: none;
+    border-radius: 3px;
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+
+.sidebar-item {
+    display: block;
+    width: 54px;
+    height: 24px;
+    color: #505050;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    transition: all .2s;
+}
+
+.sidebar-item:hover {
+    color: #fff;
+    background-color: #00a1d6;
+    cursor: pointer;
+}
+
+.sidebar-item:last-child {
+    border-top: 1px solid #e7e7e7;
+    background: transparent;
+}
+
+#change {
+    height: 32px;
+    line-height: 32px;
+    border-top: 1px solid #e7e7e7;
+}
+
+#change i {
+    color: #999;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#change:hover i {
+    color: #fff;
+}
+
+#go-top {
+    position: relative;
+    height: 32px;
+    line-height: 32px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#go-top:hover {
+    color: #fff;
+    background: #00a1d6;
+}
+
+#go-top:hover::before {
+    border-color: #fff;
+}
+
+#go-top::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    width: 8px;
+    height: 8px;
+    border: 3px solid #999;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(-45deg);
 }
