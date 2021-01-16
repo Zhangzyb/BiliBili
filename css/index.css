@@ -1997,6 +1997,7 @@ input {
     background-size: 2060px;
     background-position: 0px 0px;
     transition: opacity .3s;
+    z-index: 3;
 }
 
 .pic-all:hover .sprite {
@@ -2587,4 +2588,36 @@ input {
 .drama-proc {
     font-size: 12px;
     color: #999;
+}
+
+.crown{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 24px;
+    background-image: url('../images/icon_gold.png');
+    background-size: contain;
+    z-index: 1;
+}
+
+.drama-update .box-list{
+    height: 376px;
+}
+
+.box-carousel-wrap{
+    position: relative;
+    width: 320px;
+    height: 314px;
+    overflow: hidden;
+}
+
+.box-carousel{
+    position: absolute;
+    width: 600%;
+}
+
+.box-carousel .carousel-item{
+    width: 320px;
+    height: 314px;
 }
