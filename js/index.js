@@ -93,4 +93,20 @@ let dramaBox = document.querySelector('.box-carousel-wrap');
 let dramaCarousel = new CarouselObj(dramaBox);
 dramaCarousel.carousel();
 
+// 国创选项卡
+let guochuangTabs = document.querySelector('.guochuang-tab').children;
+let guochuangContent = document.querySelector('.guochuang-list').children;
+let guochuangSwitch = new SwitchObj(guochuangTabs, guochuangContent, 'cur', 'flex');
+guochuangSwitch.switch();
+
+// 国创轮播图
+let guochuangBox = document.querySelector('.guochuang-carousel');
+let guochuangCarousel = new CarouselObj(guochuangBox);
+guochuangCarousel.carousel();
+
+// 漫画选项卡
+let comicsTabs = document.querySelectorAll('.comics-tab > div');
+let comicsContent = document.querySelector('.comics-list').children;
+let comicsSwitch = new SwitchObj(comicsTabs, comicsContent, 'cur', 'flex');
+comicsSwitch.switch();
 
