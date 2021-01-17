@@ -1002,13 +1002,15 @@ input {
     left: 176px;
 }
 
-.tab-cate {
+.past-tarBar,
+.update-tarBar {
     padding: 12px 0 0 18px;
     font-size: 12px;
     border: 1px solid #ebe8e8;
 }
 
-.tab-cate>div {
+.past-tarBar>div,
+.update-tarBar>div {
     display: inline-block;
     cursor: pointer;
     width: 26px;
@@ -1021,12 +1023,14 @@ input {
     transition: all .3s ease;
 }
 
-.tab-cate>div:nth-child(2) {
+.past-tarBar>div:nth-child(2),
+.update-tarBar>div:nth-child(2) {
     margin-left: 8px;
     margin-right: 21px;
 }
 
-.tab-cate .active {
+.past-tarBar .cur,
+.update-tarBar .cur {
     width: 70px;
     color: #fff;
     background-color: #00a1d6;
@@ -1069,8 +1073,13 @@ input {
 }
 
 .video-list {
-    height: 470px;
+    min-height: 120px;
+    max-height: 470px;
     overflow-y: auto;
+}
+
+.update-content{
+    display: none;
 }
 
 .video-item a {
@@ -1125,6 +1134,7 @@ input {
     position: absolute;
     width: 310px;
     height: 30px;
+    color: rgb(33, 33, 33);
     line-height: 30px;
     top: 50%;
     left: 50%;
@@ -1201,12 +1211,10 @@ input {
 }
 
 .tab-items {
-    height: 460px;
-    overflow-y: auto;
-}
-
-.tab-items .item {
     display: none;
+    height: 460px;
+    color: #999;
+    overflow-y: auto;
 }
 
 .item-link {
@@ -1312,11 +1320,11 @@ input {
     left: 176px;
 }
 
-.mini-his .tab-cate div {
+.past-tarBar div{
     color: #606266;
 }
 
-.mini-his .tab-cate .active {
+.past-tarBar .cur{
     color: #fff;
 }
 
@@ -1411,7 +1419,6 @@ input {
 /* 导航模块 */
 
 .main {
-    position: relative;
     width: 1198px;
     margin: 0 auto;
 }
@@ -2784,8 +2791,8 @@ input {
 
 .side-bar {
     position: absolute;
-    top: 213px;
-    right: -77px;
+    top:  365px;
+    right: 88px; 
     width: 54px;
     padding: 6px 0 0;
     border-radius: 10px;
@@ -2793,23 +2800,15 @@ input {
     background-color: #fff;
 }
 
-.side-bar::before {
-    content: "";
+.side-bar > i{
     display: block;
-    position: absolute;
-    top: -17px;
-    left: 17px;
-    width: 18px;
-    height: 18px;
-    border: 5px solid#505050;
-    border-top: none;
-    border-right: none;
-    border-radius: 3px;
-    transform: rotate(-45deg);
-    z-index: -1;
+    margin: -26px 0 0 10px;
+    color: black;
+    font-size: 30px;
 }
 
-.sidebar-item {
+.side-bar a,
+.side-bar div{
     display: block;
     width: 54px;
     height: 24px;
@@ -2820,13 +2819,32 @@ input {
     transition: all .2s;
 }
 
-.sidebar-item:hover {
+/*  侧边导航栏顶部的两只耳朵。
+    由于开启了fixed定位，而此伪元素开启了绝对定位导致耳朵会压住导航栏，没找到合适的方法解决。
+    .side-bar::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -17px;
+    left: 15px;
+    width: 18px;
+    height: 18px;
+    border: 5px solid#505050;
+    border-top: none;
+    border-right: none;
+    border-radius: 3px;
+    transform: rotate(-45deg);
+    z-index: -1;
+} */
+
+.side-bar a:hover ,
+.side-bar .cur{
     color: #fff;
     background-color: #00a1d6;
     cursor: pointer;
 }
 
-.sidebar-item:last-child {
+.side-bar a:last-child {
     border-top: 1px solid #e7e7e7;
     background: transparent;
 }
@@ -2835,6 +2853,7 @@ input {
     height: 32px;
     line-height: 32px;
     border-top: 1px solid #e7e7e7;
+    cursor: pointer;
 }
 
 #change i {
@@ -2843,11 +2862,16 @@ input {
     font-weight: 600;
 }
 
+#change:hover{
+    background: #00a1d6;
+}
+
 #change:hover i {
     color: #fff;
 }
 
 #go-top {
+    display: block;
     position: relative;
     height: 32px;
     line-height: 32px;
