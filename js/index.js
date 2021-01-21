@@ -29,6 +29,12 @@ let updateContent = document.querySelector('.video-list').children;
 let updateSwitch = new SwitchObj(updateTabs, updateContent, 'cur', 'block');
 updateSwitch.switch();
 
+// 收藏下拉选项卡
+let collectTabs = document.querySelector('.tab-list ul').children;
+let collectContent = document.querySelector('.tab-items').children;
+let collectSwitch = new SwitchObj(collectTabs, collectContent, 'current', 'block');
+collectSwitch.switch();
+
 // 历史下拉选项卡
 let pastTabs = document.querySelector('.past-tarBar').children;
 let pastContent = document.querySelector('.past-content').children;
@@ -223,6 +229,106 @@ document.addEventListener('scroll', () => {
     }
 })
 
+// 图片动画
+const box = document.querySelector('.animate-box');
+let imgs = document.querySelectorAll('.layer img');
+let video = document.querySelector('.layer video');
+
+let initPosition;       // 进入盒子的初始位置
+let mouseMove;          // 鼠标在盒子内的移动距离
+let commonMove;         // 背景图、视频和水汽的移动距离
+let branchesMove;       // 树枝移动距离
+let snowMove;           // 雪球的移动距离
+let snowRotate;         // 雪球的旋转度
+
+// 鼠标从左到右
+let videoOpacity;      // 视频移动过程中的透明度
+let steamOpacity;      // 玻璃窗上的水汽移动过程中的透明度
+let nightBranchOpacity;   // 晚上树枝的透明度
+
+// 鼠标从右到左 
+let afternoonImgOpacity;      // 下午的背景图片透明度
+let snowOpacity;              // 雪球的透明度
+let afternoonBranchOpacity;   // 下午的树枝透明度
+
+
+box.addEventListener('mouseenter', (e) => {
+    initPosition = e.pageX;
+})
+
+box.addEventListener('mousemove', (e) => {
+    mouseMove = initPosition - e.pageX; // 小于0则表示鼠标再向右移动，否则鼠标在向左移动
+    commonMove = mouseMove / 15;
+    branchesMove = mouseMove / 11;
+    snowMove = mouseMove / 5.5;
+    snowRotate = mouseMove / 307;
+
+    // 背景图片和视频的移动
+    video.style.transform = 'translate(' + commonMove + 'px,0px)';  // 视频
+    imgs[0].style.transform = 'translate(' + commonMove + 'px,0px)'; // 早上的背景图片
+    imgs[1].style.transform = 'translate(' + commonMove + 'px,0px)'; // 下午的背景图片
+    imgs[3].style.transform = 'translate(' + commonMove + 'px,0px)'; // 水汽
+
+    // 雪球的位移
+    imgs[2].style.transform = 'translate(' + (40 + snowMove) + 'px,' + (16 - mouseMove / 220) + 'px) rotate(' + (10 + snowRotate) + 'deg)';
+
+    // 树枝的移动
+    // for (let i = 4; i < 7; i++) {
+    //     imgs[i].style.transform = 'translate(' + branchesMove + 'px,0px)';
+    // }
+    imgs[4].style.transform = 'translate(' + branchesMove + 'px,0px)';
+    imgs[5].style.transform = 'translate(' + branchesMove + 'px,0px)';
+    imgs[6].style.transform = 'translate(' + branchesMove + 'px,0px)';
+
+    //鼠标向右移动
+    if (mouseMove < 0) {
+        // 在鼠标向右移动的过程中，视频、水汽和晚上的树枝的透明度均经过 0 ~ 1 的变化，其余不变
+        // 并且三个元素的透明度变化速度各不相同
+        videoOpacity = Math.abs(commonMove / 100) * 3;          // 视频的透明度
+        steamOpacity = Math.abs(commonMove / 100) * 1.5;        // 水汽的透明度
+        nightBranchOpacit = Math.abs(branchesMove / 100) * 2.2;   // 晚上树枝的透明度
+        // 透明度超过 1 时均赋值为 1
+        video.style.opacity = videoOpacity >= 1 ? 1 : videoOpacity;
+        imgs[3].style.opacity = steamOpacity >= 1 ? 1 : steamOpacity;
+        imgs[6].style.opacity = nightBranchOpacit >= 1 ? 1 : nightBranchOpacit;
+    }
+
+    // 鼠标向左移动
+    else {
+        // 鼠标向左移动过程中，下午的图片、雪球的图片和下午的树枝的透明度均经过 1 ~ 0 的变化，其余不变
+        afternoonImgOpacity = 1 - (commonMove / 100) * 4;
+        snowOpacity = 1 - (commonMove / 100) * 2.4;
+        afternoonBranchOpacity = 1 - (commonMove / 100) * 3.2;
+        // 透明度低于 0 时均赋值为 0
+        imgs[1].style.opacity = afternoonImgOpacity <= 0 ? 0 : afternoonImgOpacity;         // 下午的图片透明度   
+        imgs[2].style.opacity = snowOpacity <= 0 ? 0 : snowOpacity;                         // 雪球图片透明度
+        imgs[5].style.opacity = afternoonBranchOpacity <= 0 ? 0 : afternoonBranchOpacity;   // 下午的树枝透明度   
+    }
+})
+
+box.addEventListener('mouseleave', () => {
+    //  鼠标从左到右移动离开图片区
+    //  位移距离还原
+    video.style.transform = 'translate(0,0)';
+    imgs[0].style.transform = 'translate(0,0)';
+    imgs[1].style.transform = 'translate(0,0)';
+    imgs[2].style.transform = 'translate(40px, 16px) rotate(10deg)';
+    imgs[3].style.transform = 'translate(0,0)';
+    imgs[4].style.transform = 'translate(0,0)';
+    imgs[5].style.transform = 'translate(0,0)';
+    imgs[6].style.transform = 'translate(0,0)';
+
+    // 透明度还原
+    video.style.opacity = 0;
+    imgs[3].style.opacity = 0;
+    imgs[6].style.opacity = 0;
+
+    // 鼠标从右到左离开图片区
+    // 透明度还原
+    imgs[1].style.opacity = 1;  // 下午的背景图片
+    imgs[2].style.opacity = 1;  // 雪球图片
+    imgs[5].style.opacity = 1;  // 下午的树枝图片
+})
 
 
 

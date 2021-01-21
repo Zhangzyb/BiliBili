@@ -1,19 +1,49 @@
 /* 顶部 */
 
 .header {
-    position: relative;
     display: flex;
-    width: 100%;
+    position: relative;
     height: 9.375vw;
-    /* margin: 0 auto; */
-    min-height: 155px;
-    background: url("../images/background.png");
+    margin: 0 auto;
     min-height: 155px;
     background-color: #f9f9f9;
     background-repeat: no-repeat;
     background-position: center 0;
     background-size: cover;
+    justify-content: center;
 }
+
+/* 背景图片的动画 */
+
+.animate-box {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.layer img, video {
+    height: 155px;
+    width: 2016px;
+    transform: scale(1) translate(0px, 0px) rotate(0deg);
+    filter: blur(0px);
+    opacity: 1;
+}
+
+/* 菜单栏 */
 
 .menu-wrap {
     display: flex;
@@ -23,11 +53,9 @@
     padding: 10px 24px;
     justify-content: space-between;
     align-items: flex-start;
-    background-color: rgba(0, 0, 0, 0.459);
+    /* background-color: rgba(0, 0, 0, 0.459); */
     z-index: 1;
 }
-
-/* 菜单栏 */
 
 .menu-link-ul {
     display: flex;
@@ -1002,15 +1030,13 @@ input {
     left: 176px;
 }
 
-.past-tarBar,
-.update-tarBar {
+.past-tarBar, .update-tarBar {
     padding: 12px 0 0 18px;
     font-size: 12px;
     border: 1px solid #ebe8e8;
 }
 
-.past-tarBar>div,
-.update-tarBar>div {
+.past-tarBar>div, .update-tarBar>div {
     display: inline-block;
     cursor: pointer;
     width: 26px;
@@ -1023,14 +1049,12 @@ input {
     transition: all .3s ease;
 }
 
-.past-tarBar>div:nth-child(2),
-.update-tarBar>div:nth-child(2) {
+.past-tarBar>div:nth-child(2), .update-tarBar>div:nth-child(2) {
     margin-left: 8px;
     margin-right: 21px;
 }
 
-.past-tarBar .cur,
-.update-tarBar .cur {
+.past-tarBar .cur, .update-tarBar .cur {
     width: 70px;
     color: #fff;
     background-color: #00a1d6;
@@ -1078,7 +1102,7 @@ input {
     overflow-y: auto;
 }
 
-.update-content{
+.update-content {
     display: none;
 }
 
@@ -1211,10 +1235,13 @@ input {
 }
 
 .tab-items {
-    display: none;
     height: 460px;
     color: #999;
     overflow-y: auto;
+}
+
+.item {
+    display: none;
 }
 
 .item-link {
@@ -1320,11 +1347,11 @@ input {
     left: 176px;
 }
 
-.past-tarBar div{
+.past-tarBar div {
     color: #606266;
 }
 
-.past-tarBar .cur{
+.past-tarBar .cur {
     color: #fff;
 }
 
@@ -2791,8 +2818,8 @@ input {
 
 .side-bar {
     position: absolute;
-    top:  365px;
-    right: 88px; 
+    top: 365px;
+    right: 88px;
     width: 54px;
     padding: 6px 0 0;
     border-radius: 10px;
@@ -2800,15 +2827,14 @@ input {
     background-color: #fff;
 }
 
-.side-bar > i{
+.side-bar>i {
     display: block;
     margin: -26px 0 0 10px;
     color: black;
     font-size: 30px;
 }
 
-.side-bar a,
-.side-bar div{
+.side-bar a, .side-bar div {
     display: block;
     width: 54px;
     height: 24px;
@@ -2837,8 +2863,7 @@ input {
     z-index: -1;
 } */
 
-.side-bar a:hover ,
-.side-bar .cur{
+.side-bar a:hover, .side-bar .cur {
     color: #fff;
     background-color: #00a1d6;
     cursor: pointer;
@@ -2862,7 +2887,7 @@ input {
     font-weight: 600;
 }
 
-#change:hover{
+#change:hover {
     background: #00a1d6;
 }
 
