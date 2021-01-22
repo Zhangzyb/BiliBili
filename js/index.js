@@ -202,18 +202,18 @@ document.addEventListener('scroll', () => {
 })
 
 // 侧边栏点击后样式改变
-let sideBtns = document.querySelectorAll('.side-bar a');
+let sideBtns = document.querySelectorAll('.side-bar > div');
 for (let i = 0; i < sideBtns.length; i++) {
     sideBtns[i].addEventListener('click', () => {
         for (let i = 0; i < sideBtns.length; i++) {
             sideBtns[i].className = '';
         }
         sideBtns[i].className = 'cur';
+        document.querySelector('.main > #' + sideBtns[i].id).scrollIntoView(true);
     })
 }
 
 // 侧边栏的滚动监听
-let liveDiv = document.querySelectorAll('.live-box');
 let lisDivs = document.querySelectorAll('.listen');
 document.addEventListener('scroll', () => {
     for (let i = 0; i < lisDivs.length; i++) {

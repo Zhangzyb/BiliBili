@@ -2863,7 +2863,7 @@ input {
     z-index: -1;
 } */
 
-.side-bar a:hover, .side-bar .cur {
+.side-bar div:hover, .side-bar .cur {
     color: #fff;
     background-color: #00a1d6;
     cursor: pointer;
