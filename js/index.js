@@ -280,7 +280,7 @@ box.addEventListener('mousemove', (e) => {
     imgs[5].style.transform = 'translate(' + branchesMove + 'px,0px)';
     imgs[6].style.transform = 'translate(' + branchesMove + 'px,0px)';
 
-    
+
     if (mouseMove < 0) { //鼠标向右移动
         // 在鼠标向右移动的过程中，视频、水汽和晚上的树枝的透明度均经过 0 ~ 1 的变化，其余不变
         // 并且三个元素的透明度变化速度各不相同
@@ -385,6 +385,7 @@ function drawSnow() {
     snows.forEach(moveSnow);
     window.requestAnimationFrame(drawSnow);
 }
+
 window.requestAnimationFrame(drawSnow);
 
 
