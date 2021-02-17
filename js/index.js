@@ -191,7 +191,7 @@ for (let i = 0; i < sprite.length; i++) {
 let sideBar = document.querySelector('.side-bar');
 document.addEventListener('scroll', () => {
     // 此处写死了
-    if (window.pageYOffset >= 373) {
+    if (window.pageYOffset >= 373 || window.scrollTop >= 373) {
         sideBar.style.position = 'fixed';
         sideBar.style.top = '50px';
     }
@@ -280,8 +280,8 @@ box.addEventListener('mousemove', (e) => {
     imgs[5].style.transform = 'translate(' + branchesMove + 'px,0px)';
     imgs[6].style.transform = 'translate(' + branchesMove + 'px,0px)';
 
-    //鼠标向右移动
-    if (mouseMove < 0) {
+    
+    if (mouseMove < 0) { //鼠标向右移动
         // 在鼠标向右移动的过程中，视频、水汽和晚上的树枝的透明度均经过 0 ~ 1 的变化，其余不变
         // 并且三个元素的透明度变化速度各不相同
         videoOpacity = Math.abs(commonMove / 100) * 3;          // 视频的透明度
@@ -292,9 +292,7 @@ box.addEventListener('mousemove', (e) => {
         imgs[3].style.opacity = steamOpacity >= 1 ? 1 : steamOpacity;
         imgs[6].style.opacity = nightBranchOpacit >= 1 ? 1 : nightBranchOpacit;
     }
-
-    // 鼠标向左移动
-    else {
+    else { // 鼠标向左移动
         // 鼠标向左移动过程中，下午的图片、雪球的图片和下午的树枝的透明度均经过 1 ~ 0 的变化，其余不变
         afternoonImgOpacity = 1 - (commonMove / 100) * 4;
         snowOpacity = 1 - (commonMove / 100) * 2.4;
@@ -329,6 +327,65 @@ box.addEventListener('mouseleave', () => {
     imgs[2].style.opacity = 1;  // 雪球图片
     imgs[5].style.opacity = 1;  // 下午的树枝图片
 })
+
+// 雪花特效 
+let canvas = document.querySelector('#canvas');
+let ctx = canvas.getContext('2d');
+canvas.style.position = 'absolute';
+canvas.style.top = 0;
+canvas.style.left = 0;
+
+class Snow {
+    constructor(canvas) {
+        this.x = 0;
+        this.y = 0;
+        this.vy = 0;
+        this.radius = 0;
+        this.alpha = 0.5;
+        this.canvas = canvas;
+        this.ctx = canvas.getContext('2d');
+        this.init();
+    }
+
+    init() {
+        this.x = Math.random() * this.canvas.width;
+        this.vy = 0.3 + Math.random() * 1;
+        this.radius = 1 + Math.random() * 3;
+        this.alpha += Math.random() * 0.5;
+        this.ctx.fillStyle = '#ffffff';
+    }
+
+    draw() {
+        this.ctx.globalAlpha = this.alpha;
+        this.ctx.beginPath();
+        this.ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        this.ctx.closePath();
+        this.ctx.fill();
+    }
+}
+
+let snows = []
+let cnt = 0;
+
+function moveSnow(snow) {
+    snow.y += snow.vy;
+    if (snow.y >= canvas.height) {
+        snow.y = 0
+    }
+    snow.draw();
+}
+
+function drawSnow() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    cnt++;
+    if (cnt <= 60) {
+        let snow = new Snow(canvas);
+        snows.push(snow);
+    }
+    snows.forEach(moveSnow);
+    window.requestAnimationFrame(drawSnow);
+}
+window.requestAnimationFrame(drawSnow);
 
 
 
